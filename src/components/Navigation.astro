@@ -1,0 +1,77 @@
+---
+import { CRoutes } from "@/models"
+import { Image } from "astro:assets"
+---
+
+<nav class="nav">
+  <ul class="nav__list">
+    {
+      Object.values(CRoutes).map((route) => (
+        <li class={
+          ["nav__item",
+          Astro.url.pathname === route.path && "nav__item--selected"
+          ].join(' ')
+        }>
+          <a 
+          class={
+            ["nav__ancord",
+              Astro.url.pathname === route.path  && "nav__ancord--selected "
+            ].join(' ')
+          } 
+          href={route.path}>
+            <Image src={route.iconData} alt={`${route.name} icon`} width="20" />
+            {route.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .nav {
+    font-size: 0.95em;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: 0.4em;
+    list-style: none;
+  }
+
+  .nav__item {
+    position: relative;
+    display: inline-block;
+    padding: 0.42857142857em 0;
+    border-bottom: 0.2em solid transparent;
+    height: 100%;
+  }
+
+  .nav__ancord {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    border-radius: 0.4em;
+    padding: 0.42857142857em;
+    transition: 0.15s ease background-color;
+  }
+
+  .nav__ancord--selected {
+    font-weight: 800;
+    background-color: var(--card-backgournd-color);
+  }
+
+  .nav__item--selected::after {
+    content: '';
+    position: absolute;
+    bottom: calc(50% - 1.82142857143em);
+    background-color: #EC775C;
+    height: 0.18571428571em;
+    width: 100%;
+    border-radius: 0.1em;
+  }
+
+  .nav__ancord:hover {
+    background-color: var(--card-backgournd-color);
+  }
+</style>

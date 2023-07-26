@@ -1,0 +1,66 @@
+---
+import Navigation from "@/components/Navigation.astro"
+
+import { getPathName } from '@/utils'
+---
+
+<header class="header">
+  <div class="header__main-container">
+    <div class="info">
+      <div class="info__name-container">
+        <span>{getPathName(Astro.url)}</span>
+      </div>
+    </div>
+    <Navigation />
+  </div>
+  <div>
+    media links
+  </div>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: var(--header-background-color);
+    border-bottom: 0.1em solid var(--header-border-color);
+    height: 7.42857142857em;
+    padding: 0em 2em;
+  }
+
+  .header__main-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .info {
+    flex-grow: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
+    font-weight: 800;
+    text-transform: capitalize;
+    text-wrap: balance;
+  }
+
+  .info__subName {
+    margin-left: 0.4em;
+    font-size: 0.8em;
+  }
+
+  .info__logo-container {
+    width: 3.3em;
+    height: 3.3em;
+    border: 0.12em solid var(--header-border-color);
+    border-radius: 100%;
+    overflow: hidden;
+  }
+
+  .info__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

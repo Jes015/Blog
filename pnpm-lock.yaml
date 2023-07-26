@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@fontsource/roboto':
+    specifier: ^5.0.5
+    version: 5.0.5
   astro:
     specifier: ^2.9.2
     version: 2.9.2
@@ -734,6 +737,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/roboto@5.0.5:
+    resolution: {integrity: sha512-IMXFq5AMgGx0sgNLfwWsmPuy3qa7lmDmQcXXihqwF4mT2UpD725cbxZj93ERY793OWon+6V1ANax02I3nt9+4w==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
