@@ -1,1 +1,1 @@
-export * from './globalConfig'
+export * from './global.config'

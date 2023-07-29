@@ -1,0 +1,32 @@
+---
+import LinkSVG from '@/assets/images/link.svg'
+import type { TLinks } from '@/models'
+
+interface Props {
+    data: TLinks
+}
+
+const { data } = Astro.props
+---
+
+<div>
+    {Object.values(data).map((link) => (
+        <div class="link__container">
+            <img src={LinkSVG.src} alt="link icon" width="20px" height="20px"/>
+            <a class="link__ancord" href={link.url} target="_blank">{link.name}</a>
+        </div>
+    ))}
+</div>
+
+<style>
+    .link__container {
+        display: flex;
+        align-items: center;
+        gap: 0.3em;
+    }
+
+    .link__ancord {
+        font-size: 0.95em;
+        text-transform: capitalize;
+    }
+</style>

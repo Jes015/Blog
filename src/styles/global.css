@@ -2,10 +2,15 @@
     --font-size: 15px;
     --font-family: 'roboto';
     --text-color: #ADBAC7;
+    --secondary-text-color: #768390;
     --body-background-color: #22272e;
     --header-background-color: #1c2128;
-    --card-backgournd-color: #2b3038;
-    --header-border-color: #444c56;
+    --card-background-color: #2b3038;
+    --border-color: #444c56;
+    --secondary-border-color: rgba(205,217,229,0.1);
+    --terceary-border-color: #768390;
+    --button-background-color: #373e47;
+    --secondary-button-background-color: #444c56;
 }
 
 *, *::after {
@@ -23,7 +28,22 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
 ul {
     margin: 0;
     padding: 0;
+}
+
+button {
+    border: 0.1em solid var(--secondary-border-color);
+    border-radius: 0.42857142857em;
+    padding: 0.5em;
+    color: var(--text-color);
+    background-color: var(--button-background-color);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--secondary-button-background-color);
+    border-color: var(--terceary-border-color);
 }
