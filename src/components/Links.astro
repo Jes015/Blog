@@ -1,6 +1,7 @@
 ---
 import LinkSVG from '@/assets/images/link.svg'
 import type { TLinks } from '@/models'
+import { Image } from 'astro:assets'
 
 interface Props {
     data: TLinks
@@ -9,16 +10,21 @@ interface Props {
 const { data } = Astro.props
 ---
 
-<div>
+<div class="links__container">
     {Object.values(data).map((link) => (
         <div class="link__container">
-            <img src={LinkSVG.src} alt="link icon" width="20px" height="20px"/>
+            <Image src={LinkSVG} alt="link icon" width="18" style={{ rotate: '-37deg'}} />
             <a class="link__ancord" href={link.url} target="_blank">{link.name}</a>
         </div>
     ))}
 </div>
 
 <style>
+    .links__container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.16em;
+    }
     .link__container {
         display: flex;
         align-items: center;

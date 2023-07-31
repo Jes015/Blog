@@ -1,0 +1,30 @@
+---
+import Post from "@/components/Post.astro"
+
+---
+
+<section class="lasPosts">
+    <header>
+        Last Posts
+    </header>
+    <div class="lastPosts__container">
+        <Post /> 
+        <Post /> 
+        <Post /> 
+        <Post /> 
+        <Post /> 
+    </div>
+</section>
+
+<style>
+    .lasPosts {
+    }
+    
+    .lastPosts__container {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(19.2857142857em, 1fr));
+        gap: 1em;
+
+    }
+</style>

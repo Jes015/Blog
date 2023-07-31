@@ -1,0 +1,39 @@
+---
+import bookSVG from "@/assets/images/book.svg"
+import { Image } from "astro:assets"
+
+---
+
+<div class="post">
+    <header class="post__header">
+        <Image src={bookSVG} alt="post icon" width="16" />
+        <a class="post__link">Why github is the best way?</a>
+    </header>
+    <main>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore natus, odit veniam eius hic quam corporis temporibus ipsa rerum soluta numquam vero maxime nemo deserunt neque voluptatum animi qui facere.</p>
+    </main>
+    <footer>
+
+    </footer>
+</div>
+
+<style>
+    .post {
+        display: inline-block;
+        border: 0.1em solid var(--border-color);
+        border-radius: 0.42857142857em;
+        padding: 1.14285714286em;
+        border-width: max(1px, 0.0625rem);
+    }
+
+    .post__header {
+        display: flex;
+        gap: 0.3em;
+    }
+
+    .post__link {
+        font-size: 1em;
+        color: #539bf5;
+        font-weight: 600;
+    }
+</style>
