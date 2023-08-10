@@ -7,8 +7,10 @@ dependencies:
   astro:
     specifier: ^2.9.2
     version: 2.9.2
+
+devDependencies:
   husky:
-    specifier: ^8.0.3
+    specifier: 8.0.3
     version: 8.0.3
 
 packages:
@@ -1745,7 +1747,7 @@ packages:
     resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: false
+    dev: true
 
   /ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}

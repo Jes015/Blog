@@ -3,20 +3,27 @@
     --font-family: 'roboto';
     --text-color: #ADBAC7;
     --secondary-text-color: #768390;
+    --terceary-text-color: #68737f;
     --body-background-color: #22272e;
     --header-background-color: #1c2128;
     --card-background-color: #2b3038;
     --border-color: #444c56;
-    --secondary-border-color: rgba(205,217,229,0.1);
+    --secondary-border-color: #cdd9e51a;
+    --terceary-border-color: #cdd9e533;
     --terceary-border-color: #768390;
     --button-background-color: #373e47;
     --secondary-button-background-color: #444c56;
+    --ancord-color: #539bf5;
+    --input-text-color: #636e7b;
 }
 
 *, *::after {
     box-sizing: border-box;
 }
 
+html{
+    scrollbar-gutter: stable;
+}
 body {
     background-color: var(--body-background-color);
     color: var(--text-color);
@@ -43,7 +50,53 @@ button {
     cursor: pointer;
 }
 
+input {
+    background-color: transparent;
+    border: 0.1em solid var(--border-color);
+    border-radius: 0.2em;
+    outline: none;
+    color: var(--input-text-color);
+    padding: 0.5em;
+}
+
 button:hover {
     background-color: var(--secondary-button-background-color);
     border-color: var(--terceary-border-color);
+}
+
+@media (width >= 1000px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+
+@media (width >= 1342px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media (width >= 1449px) {
+    body {
+        font-size: 19px;
+    }
+}
+
+@media (width >= 1690px) {
+    body {
+        font-size: 22px;
+    }
+}
+
+@media (width >= 1908px) {
+    body {
+        font-size: 25px;
+    }
+}
+
+@media (width >= 2250px) {
+    body {
+        font-size: 28px;
+    }
 }

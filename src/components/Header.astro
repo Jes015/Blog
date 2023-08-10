@@ -1,20 +1,20 @@
 ---
 import Navigation from "@/components/Navigation.astro"
 
-import { getPathName } from '@/utils'
+import { getPathName } from "@/utils"
 ---
 
 <header class="header">
   <div class="header__main-container">
-    <div class="info">
-      <div class="info__name-container">
+    <div class="header__second-container">
+      <div>
         <span>{getPathName(Astro.url)}</span>
+      </div>
+      <div>
+        <input class="header__input" placeholder="Type to search" type="text">
       </div>
     </div>
     <Navigation />
-  </div>
-  <div>
-    media links
   </div>
 </header>
 
@@ -23,44 +23,30 @@ import { getPathName } from '@/utils'
     display: flex;
     align-items: center;
     background-color: var(--header-background-color);
-    border-bottom: 0.1em solid var(--header-border-color);
-    height: 7.42857142857em;
+    border-bottom: 0.1em solid var(--border-color);
     padding: 0em 2em;
   }
 
   .header__main-container {
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
   }
 
-  .info {
-    flex-grow: 1;
-    display: inline-flex;
+  .header__second-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 1em;
+    padding: 1.4em;
     font-weight: 800;
     text-transform: capitalize;
     text-wrap: balance;
   }
 
-  .info__subName {
-    margin-left: 0.4em;
-    font-size: 0.8em;
-  }
-
-  .info__logo-container {
-    width: 3.3em;
-    height: 3.3em;
-    border: 0.12em solid var(--header-border-color);
-    border-radius: 100%;
-    overflow: hidden;
-  }
-
-  .info__logo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .header__input {
+    width: 21.875em;
+    height: 2em;
   }
 </style>

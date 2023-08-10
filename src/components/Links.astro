@@ -13,7 +13,7 @@ const { data } = Astro.props
 <div class="links__container">
     {Object.values(data).map((link) => (
         <div class="link__container">
-            <Image src={LinkSVG} alt="link icon" width="18" style={{ rotate: '-37deg'}} />
+            <Image src={LinkSVG} alt="link icon" width="16" style={{ rotate: '-37deg'}} />
             <a class="link__ancord" href={link.url} target="_blank">{link.name}</a>
         </div>
     ))}
@@ -34,5 +34,10 @@ const { data } = Astro.props
     .link__ancord {
         font-size: 0.95em;
         text-transform: capitalize;
+    }
+    
+    .link__ancord:hover {
+        text-decoration: underline;
+        color: var(--ancord-color);
     }
 </style>

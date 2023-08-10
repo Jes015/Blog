@@ -1,39 +1,69 @@
 ---
 import bookSVG from "@/assets/images/book.svg"
+import Tech from "@/components/Tech.astro"
 import { Image } from "astro:assets"
-
 ---
 
 <div class="post">
-    <header class="post__header">
-        <Image src={bookSVG} alt="post icon" width="16" />
-        <a class="post__link">Why github is the best way?</a>
-    </header>
-    <main>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore natus, odit veniam eius hic quam corporis temporibus ipsa rerum soluta numquam vero maxime nemo deserunt neque voluptatum animi qui facere.</p>
-    </main>
-    <footer>
-
-    </footer>
+  <header class="post__header">
+    <div class="post__title-container">
+      <Image src={bookSVG} alt="post icon" width="16" />
+      <a class="post__link">Why github is the best way?</a>
+    </div>
+    <time class="post__time" datetime="2023-07-07">3 days ago</time>
+  </header>
+  <main class="post__main">
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore natus,
+      odit veniam eius hic quam corporis temporibus ipsa rerum soluta numquam
+      vero maxime nemo deserunt neque voluptatum animi qui facere.
+    </p>
+  </main>
+  <footer>
+    <div>
+      <Tech name="javascript" />
+    </div>
+  </footer>
 </div>
 
 <style>
-    .post {
-        display: inline-block;
-        border: 0.1em solid var(--border-color);
-        border-radius: 0.42857142857em;
-        padding: 1.14285714286em;
-        border-width: max(1px, 0.0625rem);
-    }
+  .post {
+    display: inline-block;
+    border: 0.1em solid var(--border-color);
+    border-radius: 0.42857142857em;
+    padding: 1.14285714286em;
+    border-width: max(1px, 0.0625rem);
+    overflow: hidden;
+    color: var(--secondary-text-color);
+  }
 
-    .post__header {
-        display: flex;
-        gap: 0.3em;
-    }
+  .post__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4em;
+  }
 
-    .post__link {
-        font-size: 1em;
-        color: #539bf5;
-        font-weight: 600;
-    }
+  .post__title-container {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+  }
+
+  .post__time {
+    font-size: 0.85em;
+    text-transform: lowercase;
+    text-wrap: balance;
+  }
+
+  .post__main {
+    font-size: 0.8em;
+  }
+
+  .post__link {
+    font-size: 0.97em;
+    color: var(--ancord-color);
+    font-weight: 600;
+    text-wrap: balance;
+  }
 </style>
