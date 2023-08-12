@@ -7,6 +7,7 @@
     --body-background-color: #22272e;
     --header-background-color: #1c2128;
     --card-background-color: #2b3038;
+    --secondary-background-color: #2d333b;
     --border-color: #444c56;
     --secondary-border-color: #cdd9e51a;
     --terceary-border-color: #cdd9e533;
@@ -15,6 +16,7 @@
     --secondary-button-background-color: #444c56;
     --ancord-color: #539bf5;
     --input-text-color: #636e7b;
+    --border-radius-value: 0.375em;
 }
 
 *, *::after {
@@ -23,6 +25,10 @@
 
 html{
     scrollbar-gutter: stable;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
 }
 body {
     background-color: var(--body-background-color);
@@ -42,9 +48,12 @@ ul {
 }
 
 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2em;
     border: 0.1em solid var(--secondary-border-color);
     border-radius: 0.42857142857em;
-    padding: 0.5em;
     color: var(--text-color);
     background-color: var(--button-background-color);
     cursor: pointer;
