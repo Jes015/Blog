@@ -1,0 +1,25 @@
+name: pipeline
+
+on:
+  pull_request:
+    branches: ['master']
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout git repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: setup nodejs environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - name: setup pnpm 
+        run: corepack prepare pnpm@latest --activate
+      - name: install dependencies
+        run: pnpm install
+      - name: linter
+        run: pnpm lint
