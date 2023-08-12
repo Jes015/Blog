@@ -1,35 +1,11 @@
 ---
 import Post from "@/components/Post.astro"
-
+import PostLayout from "@/layouts/PostLayout.astro"
 ---
 
-<section class="lastPosts">
-    <header class="lastPosts__header">
-        Last Posts
-    </header>
-    <div class="lastPosts__container">
-        <Post /> 
-        <Post /> 
-        <Post /> 
-        <Post />
-    </div>
-</section>
-
-<style>
-    .lastPosts {
-    }
-
-    .lastPosts__header {
-        margin-bottom: 1em
-    }
-    
-    .lastPosts__container {
-        height: 100%;
-        display: grid;
-        justify-content: center;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: minmax(1em, 10em);
-        gap: 1em;
-
-    }
-</style>
+<PostLayout title="Last Posts">
+    <Post />
+    <Post />
+    <Post />
+    <Post />
+</PostLayout>
