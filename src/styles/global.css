@@ -17,6 +17,7 @@
     --ancord-color: #539bf5;
     --input-text-color: #636e7b;
     --border-radius-value: 0.375em;
+    --backdrop-color: #1c2128cc;
 }
 
 *, *::after {
@@ -64,8 +65,12 @@ input {
     border: 0.1em solid var(--border-color);
     border-radius: 0.2em;
     outline: none;
-    color: var(--input-text-color);
     padding: 0.5em;
+    color: var(--text-color);
+}
+
+input:hover {
+    border: 0.1em solid var(--ancord-color);
 }
 
 button:hover {
