@@ -4,7 +4,7 @@ import { CommandMenu } from "@/components/"
 import { useState } from "react"
 import styles from './search.module.css'
 export const Search = () => {
-  const [modalOpen, setModalOpen] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
 
   const handleOnClick = () => {
     setModalOpen(!modalOpen)

@@ -9,7 +9,7 @@ import { getPathName } from "@/utils"
   <div class="header__container">
     <div class="header__second-container">
       <span>{getPathName(Astro.url)}</span>
-      <Search client:load client:only />
+      <Search client:only="react" />
     </div>
     <Navigation />
   </div>

@@ -13,13 +13,13 @@
   },
   "dependencies": {
     "@astrojs/react": "^2.2.1",
-    "@fontsource/roboto": "^5.0.5",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "astro": "^2.9.2",
+    "@fontsource/roboto": "^5.0.8",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "astro": "^2.10.7",
     "cmdk": "^0.2.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "husky": "8.0.3"
