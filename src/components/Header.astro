@@ -1,6 +1,6 @@
 ---
+import { Search } from "@/components/"
 import Navigation from "@/components/Navigation.astro"
-import Search from "@/components/Search.astro"
 
 import { getPathName } from "@/utils"
 ---
@@ -9,7 +9,7 @@ import { getPathName } from "@/utils"
   <div class="header__container">
     <div class="header__second-container">
       <span>{getPathName(Astro.url)}</span>
-      <Search />
+      <Search client:load client:only />
     </div>
     <Navigation />
   </div>
