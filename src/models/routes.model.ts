@@ -21,7 +21,7 @@ export const CRoutes = {
     },
     post: {
         name: 'Post',
-        path: '/test',
+        path: '/post',
         iconData: BookIcon
     }
 }

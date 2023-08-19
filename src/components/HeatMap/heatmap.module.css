@@ -1,0 +1,18 @@
+.heatmap__container {
+    width: 100%;
+    display: flex;
+    gap: 1em;
+}
+
+.heatmap__main-section {
+    display: flex;
+    width: 100%;
+    padding: 0.2em;
+    border: var(--border-color) 0.1em solid;
+    border-radius: var(--border-radius-value);
+}
+
+.rect {
+    width: 1.1em;
+    height: 1.1em;
+}

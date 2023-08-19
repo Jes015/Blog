@@ -1,0 +1,30 @@
+.heatMapFilters__section {
+    flex-grow: 1;
+}
+.heatMapFilters__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    list-style: none;
+}
+
+
+.heatMapFilters__button {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 9.1em;
+    height: 2.6em;
+    background-color: #316dca;
+    overflow: hidden;
+    color: #cdd9e5;
+    padding: 0.5em 1em;
+    font-size: 0.78em;
+}
+
+@media (width < 900px) {
+    .heatMapFilters__section {
+        display: none;
+    }
+    
+}

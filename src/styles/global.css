@@ -18,6 +18,11 @@
     --input-text-color: #636e7b;
     --border-radius-value: 0.375em;
     --backdrop-color: #1c2128cc;
+    --background-heatmap-rec: var(--secondary-background-color);
+    --background-heatmap-rec-2-day: #0e4429;
+    --background-heatmap-rec-4-day: #006d32;
+    --background-heatmap-rec-10-day: #26a641;
+    --background-heatmap-rec-20-day: #39d353;
 }
 
 *, *::after {
