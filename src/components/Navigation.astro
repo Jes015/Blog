@@ -1,24 +1,14 @@
 ---
-import { CRoutes } from "@/models"
-import { Image } from "astro:assets"
+import { CRoutes } from "@/models";
+import { Image } from "astro:assets";
 ---
 
 <nav class="nav">
-  <ul class="nav__list">
+  <ul id="nav__list" class="nav__list">
     {
       Object.values(CRoutes).map((route) => (
-        <li class={
-          ["nav__item",
-          Astro.url.pathname === route.path && "nav__item--selected"
-          ].join(' ')
-        }>
-          <a 
-          class={
-            ["nav__ancord",
-              Astro.url.pathname === route.path  && "nav__ancord--selected "
-            ].join(' ')
-          } 
-          href={route.path}>
+        <li class={"nav__item"}>
+          <a class={"nav__ancord"} href={route.path}>
             <Image src={route.iconData} alt={`${route.name} icon`} width="20" />
             {route.name}
           </a>
@@ -28,6 +18,33 @@ import { Image } from "astro:assets"
   </ul>
 </nav>
 
+<script>
+  document.addEventListener("astro:load", () => {
+    const $list = document.getElementById("nav__list") as HTMLElement;
+
+    const windowLocation = window.location.pathname
+      .trim()
+      .slice(1)
+      .toLowerCase();
+
+    for (let element of $list?.children) {
+      const $liElement = element as HTMLLIElement;
+      const $anchorElement = element.children[0] as HTMLAnchorElement;
+
+      const elementTextContent = $anchorElement.textContent
+        ?.trim()
+        .toLowerCase();
+
+      const isInHomePath =
+        elementTextContent === "home" && windowLocation === "";
+
+      if (elementTextContent === windowLocation || isInHomePath) {
+        $liElement.classList.add("nav__item--selected");
+        $anchorElement.classList.add("nav__ancord--selected");
+      }
+    }
+  });
+</script>
 <style>
   .nav {
     position: relative;
@@ -63,10 +80,10 @@ import { Image } from "astro:assets"
   }
 
   .nav__item--selected::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: calc(50% - 1.82142857143em);
-    background-color: #EC775C;
+    background-color: #ec775c;
     height: 0.18571428571em;
     width: 100%;
     border-radius: 0.1em;
