@@ -18,7 +18,7 @@
     "@types/react-dom": "^18.2.7",
     "@uiw/react-heat-map": "2.1.1",
     "@uiw/react-tooltip": "^4.21.28",
-    "astro": "^2.10.9",
+    "astro": "^2.10.12",
     "cmdk": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
