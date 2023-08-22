@@ -2,14 +2,13 @@ import styles from './categoriesFilters.module.css'
 
 export const CategoriesFilters = () => {
     return (
-        <section className={styles.categoriesFilters}>
-            <input className={styles.categoriesFilters__input} placeholder='Find a post...' type="text" />
-            <div className={styles['categoriesFilters__btn-container']}>
-                <button className={styles['categoriesFilters__btn']}>Type</button>
-                <button className={styles['categoriesFilters__btn']}>Language</button>
-                <button className={styles['categoriesFilters__btn']}>Sort</button>
+        <div className={styles.categoriesFilters} id='category__filters'>
+            <input className={styles.categoriesFilters__input} id='category__search' placeholder='Find a post...' type="text" />
+            <div className={styles['categoriesFilters__select-container']} id='category__select-container'>
+                <button className={styles['categoriesFilters__select']}>Type</button>
+                <button className={styles['categoriesFilters__select']}>Language</button>
+                <button className={styles['categoriesFilters__select']}>Sort</button>
             </div>
-            <button className={styles.categoriesFilters__btn}>New</button>
-        </section>
+        </div>
     )
 }

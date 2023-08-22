@@ -18,6 +18,7 @@ const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Se
 
 const date = new Date()
 date.setMonth(new Date().getMonth() - 4)
+
 export const HeatMap = () => {
   return (
     <div className={styles.heatmap__container}>

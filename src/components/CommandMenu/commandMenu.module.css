@@ -1,5 +1,5 @@
 .commandMenu__container {
-    margin-top: 1em;
+    padding-top: 1em;
     backdrop-filter: blur(0.1em);
     background-color: var(--backdrop-color);
     width: 100dvw;

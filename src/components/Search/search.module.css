@@ -31,3 +31,17 @@
 .search:hover {
   border-color: var(--anchor-color);
 }
+
+@media (width < 511px) {
+  .search {
+    width: auto;
+  }
+  
+  .search__command-icon {
+    display: none;
+  }
+  
+  .search__text {
+    display: none;
+  }
+}
