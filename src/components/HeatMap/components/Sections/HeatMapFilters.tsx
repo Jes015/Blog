@@ -4,7 +4,7 @@ const buttons = ['2023', '2024']
 
 export const HeatMapFilters = () => {
     return (
-        <section className={styles.heatMapFilters__section}>
+        <section className={styles.heatMapFilters__section} id='heatmap__filters'>
             <main>
                 <ul className={styles.heatMapFilters__list}>
                     {buttons.map((buttonName) => (

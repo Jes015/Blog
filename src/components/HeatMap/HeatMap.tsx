@@ -21,7 +21,7 @@ date.setMonth(new Date().getMonth() - 4)
 export const HeatMap = () => {
   return (
     <div className={styles.heatmap__container}>
-      <section className={styles['heatmap__main-section']}>
+      <section className={styles['heatmap__main-section']} id='heatmap'>
         <DefaultHeatMap
           value={value}
           weekLabels={weekLabels}

@@ -8,7 +8,7 @@ import { getPathName } from "@/utils"
 <header class="header">
   <div class="header__container">
     <div class="header__second-container">
-      <span>{getPathName(Astro.url)}</span>
+      <span id="header__breadcrumbs">{getPathName(Astro.url)}</span>
       <Search client:only="react" />
     </div>
     <Navigation />

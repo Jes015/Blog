@@ -14,7 +14,7 @@
     --terceary-border-color: #768390;
     --button-background-color: #373e47;
     --secondary-button-background-color: #444c56;
-    --ancord-color: #539bf5;
+    --anchor-color: #539bf5;
     --input-text-color: #636e7b;
     --border-radius-value: 0.375em;
     --backdrop-color: #1c2128cc;
@@ -29,12 +29,12 @@
     box-sizing: border-box;
 }
 
-html{
-    scrollbar-gutter: stable;
-}
-
 h1, h2, h3, h4 {
     margin: 0;
+}
+
+html{
+    scrollbar-gutter: stable;
 }
 body {
     background-color: var(--body-background-color);
@@ -75,7 +75,7 @@ input {
 }
 
 input:hover {
-    border: 0.1em solid var(--ancord-color);
+    border: 0.1em solid var(--anchor-color);
 }
 
 button:hover {
