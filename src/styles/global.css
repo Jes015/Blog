@@ -11,12 +11,11 @@
     --border-color: #444c56;
     --secondary-border-color: #cdd9e51a;
     --terceary-border-color: #cdd9e533;
-    --terceary-border-color: #768390;
     --button-background-color: #373e47;
     --secondary-button-background-color: #444c56;
     --anchor-color: #539bf5;
     --input-text-color: #636e7b;
-    --border-radius-value: 0.375em;
+    --border-radius-value: 0.5em;
     --backdrop-color: #1c2128cc;
     --background-heatmap-rec: var(--secondary-background-color);
     --background-heatmap-rec-2-day: #0e4429;
@@ -33,9 +32,6 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
-html{
-    scrollbar-gutter: stable;
-}
 body {
     background-color: var(--body-background-color);
     color: var(--text-color);
@@ -75,7 +71,11 @@ input {
 }
 
 input:hover {
-    border: 0.1em solid var(--anchor-color);
+    border: 0.12em solid var(--anchor-color);
+}
+
+input:focus {
+    border: 0.12em solid var(--anchor-color);
 }
 
 button:hover {

@@ -72,6 +72,10 @@
     border: none;
 }
 
+.commandMenu__input:focus {
+    border: none;
+}
+
 
 @media (width < 1015px) {
     .commandMenu {
