@@ -31,4 +31,10 @@ const {title, type} = Astro.props
         grid-auto-rows: minmax(1em, 10em);
         gap: 1em;
     }
+
+    @media (width < 670px) {
+        .postLayout__main {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

@@ -9,7 +9,9 @@ import { getPathName } from "@/utils"
   <div class="header__container">
     <div class="header__second-container">
       <span id="header__breadcrumbs">{getPathName(Astro.url)}</span>
-      <Search client:only="react" />
+      <div class="search__container">
+        <Search client:only="react" />
+      </div>
     </div>
     <Navigation />
   </div>
@@ -42,5 +44,21 @@ import { getPathName } from "@/utils"
     font-weight: 800;
     text-transform: capitalize;
     text-wrap: balance;
+  }
+
+  .search__container {
+    display: flex;
+    justify-content: right;
+    width: 22.875em;
+    height: 2.6em;
+  }
+
+  @media (width < 511px) {
+    .header {
+      padding: 0em 1em;
+    }
+    .search__container {
+      width: auto;
+    }
   }
 </style>

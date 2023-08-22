@@ -1,5 +1,4 @@
+export * from './CategoriesActions/CategoriesActions'
 export * from './CategoriesFilters/CategoriesFilters'
-export * from './CategoriesFoundPosts'
-export * from './CategoryPost/CategoryPost'
-export * from './CategoryTech/CategoryTech'
+export * from './FoundPosts/FoundPosts'
 

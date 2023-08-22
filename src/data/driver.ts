@@ -86,5 +86,38 @@ export const localSteps: ILocalSteps[] = [
                 }
             }
         ]
+    },
+    {
+        path: '/posts',
+        steps: [
+            {
+                element: "#category__filters",
+                popover: {
+                    title: "Filters",
+                    description: "This filters section allows you to refine and personalize your search options, ensuring you find exactly what you're looking for in an instant."
+                }
+            },
+            {
+                element: "#category__search",
+                popover: {
+                    title: 'Search',
+                    description: 'This search input allows you to find posts quickly and easily, refining your results according to your preferences.'
+                }
+            },
+            {
+                element: "#category__select-container",
+                popover: {
+                    title: "Select options",
+                    description: "This filters section enables you to refine and personalize your post search by type and language, and also allows you to sort the results."
+                }
+            },
+            {
+                element: "#category__request-btn",
+                popover: {
+                    title: "Request button",
+                    description: "Click here to send a request to the blog creator for a new post."
+                }
+            }
+        ]
     }
 ]

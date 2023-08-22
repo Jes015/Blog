@@ -1,11 +1,43 @@
 ---
-import Post from "@/components/Post.astro"
+import { Post } from "@/components"
 import SectionLayout from "@/layouts/SectionLayout.astro"
 ---
 
 <SectionLayout title="Last Posts" type="postLayout__main">
-    <Post />
-    <Post />
-    <Post />
-    <Post />
+  <Post
+    client:only="react"
+    dynamicStyles={{
+      border: "post--border",
+      padding: "post--padding-all",
+      borderRadius: "post--border-radius-04",
+      anchor: "post__anchor--097",
+    }}
+  />
+  <Post
+    client:only="react"
+    dynamicStyles={{
+      border: "post--border",
+      padding: "post--padding-all",
+      borderRadius: "post--border-radius-04",
+      anchor: "post__anchor--097",
+    }}
+  />
+  <Post
+    client:only="react"
+    dynamicStyles={{
+      border: "post--border",
+      padding: "post--padding-all",
+      borderRadius: "post--border-radius-04",
+      anchor: "post__anchor--097",
+    }}
+  />
+  <Post
+    client:only="react"
+    dynamicStyles={{
+      border: "post--border",
+      padding: "post--padding-all",
+      borderRadius: "post--border-radius-04",
+      anchor: "post__anchor--097",
+    }}
+  />
 </SectionLayout>
