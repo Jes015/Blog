@@ -17,4 +17,7 @@ export const globalConfig = {
             },
         ]
     },
+    localStorage: {
+        wasGlobalStepsShowed: 'wasGlobalStepsShowed'
+    }
 }

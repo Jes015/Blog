@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   '@astrojs/react':
     specifier: ^2.3.2
@@ -29,6 +25,9 @@ dependencies:
   cmdk:
     specifier: ^0.2.0
     version: 0.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
+  driver.js:
+    specifier: ^1.2.1
+    version: 1.2.1
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1891,6 +1890,10 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.10
       csstype: 3.1.2
+    dev: false
+
+  /driver.js@1.2.1:
+    resolution: {integrity: sha512-6nDbVnZdjRgTsJOOmGRmMf/t6cHnMyyZK/wLSbdLZp33I7odPglw1cVlX3TMaPnMDYIJUq7h8a0buejOLqM7XQ==}
     dev: false
 
   /dset@3.1.2:
@@ -4080,3 +4083,7 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: false
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

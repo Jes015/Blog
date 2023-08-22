@@ -3,7 +3,7 @@ import { CRoutes } from "@/models";
 import { Image } from "astro:assets";
 ---
 
-<nav class="nav">
+<nav class="nav" id="header__nav-list">
   <ul id="nav__list" class="nav__list">
     {
       Object.values(CRoutes).map((route) => (
@@ -19,7 +19,7 @@ import { Image } from "astro:assets";
 </nav>
 
 <script>
-  document.addEventListener("astro:load", () => {
+  const determinateSelectedNavItem = () => {
     const $list = document.getElementById("nav__list") as HTMLElement;
 
     const windowLocation = window.location.pathname
@@ -29,7 +29,7 @@ import { Image } from "astro:assets";
 
     for (let element of $list?.children) {
       const $liElement = element as HTMLLIElement;
-      const $anchorElement = element.children[0] as HTMLAnchorElement;
+      const $anchorElement = $liElement.children[0] as HTMLAnchorElement;
 
       const elementTextContent = $anchorElement.textContent
         ?.trim()
@@ -43,7 +43,9 @@ import { Image } from "astro:assets";
         $anchorElement.classList.add("nav__ancord--selected");
       }
     }
-  });
+  };
+
+  document.addEventListener("astro:load", determinateSelectedNavItem);
 </script>
 <style>
   .nav {

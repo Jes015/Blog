@@ -13,7 +13,7 @@
 }
 
 .commandItem__ancord {
-    color: var(--ancord-color);
+    color: var(--anchor-color);
     text-decoration: underline;
 }
 
