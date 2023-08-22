@@ -1,0 +1,17 @@
+.tech {
+    display: flex;
+    gap: 0.2em;
+    align-items: center;
+}
+
+.tech__title {
+    line-height: 1em;
+    font-size: 0.8em;
+}
+
+.tech__color-container {
+    width: 0.85714285714em;
+    height: 0.85714285714em;
+    border: 0.1em solid var(--terceary-border-color);
+    border-radius: 100%;
+}

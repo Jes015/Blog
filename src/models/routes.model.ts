@@ -8,9 +8,9 @@ export const CRoutes = {
         path: '/',
         iconData: HomeIcon,
     },
-    categories: {
-        name: 'Categories',
-        path: '/categories',
+    posts: {
+        name: 'Posts',
+        path: '/posts',
         iconData: CategoriesIcon
     },
     post: {
