@@ -12,10 +12,20 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@fontsource/roboto": "^5.0.5",
-    "astro": "^2.9.2"
+    "@astrojs/react": "^2.3.2",
+    "@fontsource/roboto": "^5.0.8",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@uiw/react-heat-map": "2.1.1",
+    "@uiw/react-tooltip": "^4.21.28",
+    "astro": "^2.10.12",
+    "cmdk": "^0.2.0",
+    "driver.js": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.0",
     "husky": "8.0.3"
   }
 }

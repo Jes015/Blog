@@ -4,8 +4,9 @@ import "@fontsource/roboto"
 import "@/styles/global.css"
 import "@/styles/normalize.css"
 
+import Driver from "@/components/Driver/Driver.astro"
 import Header from "@/components/Header.astro"
-import ProfileSection from "@/components/ProfileSection.astro"
+import ProfileSection from "@/components/Sections/ProfileSection.astro"
 import { ViewTransitions } from "astro:transitions"
 
 interface Props {
@@ -27,12 +28,16 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
+    <div id="modal" />
     <Header />
+    <Driver />
     <main>
       <div class="wrap">
         <div class="sectionLayout">
-          <ProfileSection />
-          <slot />
+          <ProfileSection transition:persist />
+          <div class="sectionLayout__second-container">
+            <slot />
+          </div>
         </div>
       </div>
     </main>
@@ -50,6 +55,12 @@ const { title } = Astro.props;
         display: grid;
         grid-template-columns: 18.5em 1fr;
         gap: 1.5em;
+      }
+
+      .sectionLayout__second-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em
       }
 
       @media (width <= 1011px) {

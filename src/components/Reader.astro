@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets"
+
+import CopyImage from '@/assets/images/copy.svg'
+---
+
+<div class="reader" id="reader">
+    <header class="reader__header">
+        <div class="reader__user-data-container">
+            <div>
+                <span>by </span>
+                <span class="reader__title">Jes015</span>
+            </div>
+            <time class="reader__time" datetime="2023-07-18">3 hours ago</t>
+        </div>
+        <button class="reader__button" title="copy link" id="reader__copy">
+            <Image src={CopyImage} alt="copy image" class="reader__icon" />
+        </button>
+    </header>
+    <main class="reader__main">
+    </main>
+    <footer class="reader__footer"></footer>
+</div>
+
+<style>
+    .reader {
+        border: 0.1em solid var(--border-color);
+        border-radius: var(--border-radius-value);
+    }
+
+    .reader__header {
+        height: 2.875em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--secondary-background-color);
+        border-bottom: 0.1em solid var(--border-color);
+        padding: 0.5em;
+        gap: 1em;
+    }
+
+    .reader__user-data-container {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.87em;
+    }
+
+    .reader__title {
+        font-weight: 600;
+    }
+
+    .reader__time {
+        font-size: 0.8em;
+    }
+
+    .reader__button {
+        height: 1.75em;
+        overflow: hidden;
+    }
+
+    .reader__icon {
+        height: 100%;
+        width: 100%;
+    }
+
+    .reader__main {
+        padding: 0.5em;
+        background-color: transparent;
+    }
+</style>

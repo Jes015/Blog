@@ -1,0 +1,42 @@
+---
+---
+
+<div class="driver">
+  <button class="driver__button" id="driver_button">Show tour</button>
+</div>
+<style>
+  .driver {
+    position: fixed;
+    bottom: 0.5em;
+    right: 0.5em;
+  }
+
+  .driver__button {
+    font-size: 0.8em;
+    padding: 0.2em;
+  }
+</style>
+<script>
+  import { globalSteps, localSteps } from "@/data/"
+
+  const showTour = async () => {
+    const DriverManager = await import("@/utils/")
+      .then((module) => module.DriverManager)
+      .catch((err) => {
+        console.log(err);
+      });
+
+    if (DriverManager == null) return;
+
+    const driver = new DriverManager(globalSteps, localSteps);
+
+    driver.showSteps();
+  };
+
+  document.addEventListener("astro:load", () => {
+    const $button = document.getElementById(
+      "driver_button"
+    ) as HTMLButtonElement;
+    $button.addEventListener("click", showTour);
+  });
+</script>

@@ -24,7 +24,7 @@ import rssfeedImg from "@/assets/images/rss-feed.svg"
     </div>
   </header>
   <main class="profileSection__main">
-    <button class="profileSection__button">
+    <button class="profileSection__button" id="profile__button-rssfeed">
       <span>RSS FEED</span>
       <img src={rssfeedImg.src} alt="rss feed icon" width="16px" height="16px" /></button>
     <Links data={globalConfig.owner.socials} />
@@ -80,6 +80,7 @@ import rssfeedImg from "@/assets/images/rss-feed.svg"
     align-items: center;
     gap: 0.3em;
     width: 100%;
+    padding: 0.6em;
   }
 
   .profileSection__main > * {

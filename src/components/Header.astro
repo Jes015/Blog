@@ -1,6 +1,6 @@
 ---
+import { Search } from "@/components/"
 import Navigation from "@/components/Navigation.astro"
-import Search from "@/components/Search.astro"
 
 import { getPathName } from "@/utils"
 ---
@@ -8,8 +8,10 @@ import { getPathName } from "@/utils"
 <header class="header">
   <div class="header__container">
     <div class="header__second-container">
-      <span>{getPathName(Astro.url)}</span>
-      <Search />
+      <span id="header__breadcrumbs">{getPathName(Astro.url)}</span>
+      <div class="search__container">
+        <Search client:only="react" />
+      </div>
     </div>
     <Navigation />
   </div>
@@ -37,9 +39,26 @@ import { getPathName } from "@/utils"
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.4em 0em;
+    padding-top: 1em;
+    padding-bottom: 0.3em;
     font-weight: 800;
     text-transform: capitalize;
     text-wrap: balance;
+  }
+
+  .search__container {
+    display: flex;
+    justify-content: right;
+    width: 22.875em;
+    height: 2.6em;
+  }
+
+  @media (width < 511px) {
+    .header {
+      padding: 0em 1em;
+    }
+    .search__container {
+      width: auto;
+    }
   }
 </style>

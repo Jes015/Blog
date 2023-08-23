@@ -1,0 +1,40 @@
+---
+
+interface Props {
+    title: string
+    type?: 'postLayout__main'
+}
+
+const {title, type} = Astro.props
+---
+
+<section id="layout__post">
+    <header class="sectionLayout__header">
+        {title}
+    </header>
+    <main class={type}>
+        <slot />
+    </ma>
+</section>
+
+<style>
+    .sectionLayout__header {
+        margin-bottom: 1em
+    }
+    
+    .postLayout__main {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(1em, 10em);
+        gap: 1em;
+    }
+
+    @media (width < 670px) {
+        .postLayout__main {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

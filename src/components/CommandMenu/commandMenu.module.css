@@ -1,0 +1,85 @@
+.commandMenu__container {
+    padding-top: 1em;
+    backdrop-filter: blur(0.1em);
+    background-color: var(--backdrop-color);
+    width: 100dvw;
+    width: 100vw;
+    height: 100dvh;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    z-index: 100;
+}
+
+.commandMenu {
+    max-width: 80vw;
+    max-width: 80dvw;
+    width: 100%;
+    border: 0.1em solid var(--border-color);
+    border-radius: var(--border-radius-value);
+    background-color: var(--body-background-color);
+}
+
+.commandMenu__header {
+    padding: 1em;
+    border-bottom: 0.1em solid var(--border-color);
+}
+
+.commandMenu__main {
+    padding: 0.8em 1em;
+}
+
+.commandMenu__footer {
+    display: flex;
+    justify-content: right;
+    gap: 0.4em;
+    padding: 0.5em 1em;
+    border-top: 0.1em solid var(--border-color);
+    font-size: 0.7em;
+}
+
+.commandMenu__astro {
+    color: #ff7e33;
+}
+
+[cmdk-group-heading] {
+    font-weight: 700;
+    font-size: 0.85em;
+}
+
+.commandMenu__search-container {
+    display: flex;
+    align-items: center;
+    padding: 0.1em 0.5em;
+    border-radius: var(--border-radius-value);
+    border: 0.1em solid var(--anchor-color);
+}
+
+.commandMenu__search-icon {
+    margin-top: 0.15em;
+}
+
+.commandMenu__input {
+    border: none;
+    width: 100%;
+}
+
+.commandMenu__input:hover {
+    border: none;
+}
+
+.commandMenu__input:focus {
+    border: none;
+}
+
+
+@media (width < 1015px) {
+    .commandMenu {
+        width: 95vw;
+        width: 95dvw;
+    }
+}

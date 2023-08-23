@@ -1,6 +1,6 @@
+import BookIcon from '@/assets/images/book.svg'
 import CategoriesIcon from '@/assets/images/categories.svg'
 import HomeIcon from '@/assets/images/home.svg'
-import ProjectsIcon from '@/assets/images/projects.svg'
 
 export const CRoutes = {
     home: {
@@ -8,14 +8,14 @@ export const CRoutes = {
         path: '/',
         iconData: HomeIcon,
     },
-    categories: {
-        name: 'Categories',
-        path: '/categories',
+    posts: {
+        name: 'Posts',
+        path: '/posts',
         iconData: CategoriesIcon
     },
-    projects: {
-        name: 'Projects',
-        path: '/projects',
-        iconData: ProjectsIcon
+    post: {
+        name: 'Post',
+        path: '/post',
+        iconData: BookIcon
     }
 }

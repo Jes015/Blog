@@ -1,0 +1,62 @@
+  .driver-popover.driverjs-theme {
+      background-color: var(--header-background-color);
+      color: var(--text-color);
+      border: 0.1em solid var(--border-color);
+  }
+
+  .driver-popover.driverjs-theme .driver-popover-title {
+      font-size: 20px;
+  }
+
+  .driver-popover.driverjs-theme .driver-popover-title,
+  .driver-popover.driverjs-theme .driver-popover-description,
+  .driver-popover.driverjs-theme .driver-popover-progress-text {
+      color: var(--text-color);
+  }
+
+  .driver-popover.driverjs-theme button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.2em;
+      border: 0.1em solid var(--secondary-border-color);
+      border-radius: 0.42857142857em;
+      color: var(--text-color);
+      background-color: var(--button-background-color) !important;
+      cursor: pointer;
+      text-shadow: none;
+      padding: 0.5em;
+  }
+
+  .driver-popover.driverjs-theme button:hover {
+      background-color: var(--secondary-button-background-color);
+      border-color: var(--terceary-border-color);
+  }
+
+  .driver-popover.driverjs-theme .driver-popover-navigation-btns {
+      gap: 3px;
+  }
+
+  .driver-popover.driverjs-theme .driver-popover-close-btn {
+      color: #9b9b9b;
+  }
+
+  .driver-popover.driverjs-theme .driver-popover-close-btn:hover {
+      color: var(--text-color);
+  }
+
+  .driver-popover.driverjs-theme .driver-popover-arrow-side-left.driver-popover-arrow {
+      border-left-color: var(--anchor-color);
+  }
+
+  .driver-popover.driverjs-theme .driver-popover-arrow-side-right.driver-popover-arrow {
+      border-left-color: var(--anchor-color);
+  }
+
+  .driver-popover.driverjs-theme .driver-popover-arrow-side-top.driver-popover-arrow {
+      border-left-color: var(--anchor-color);
+  }
+
+  .driver-popover.driverjs-theme .driver-popover-arrow-side-bottom.driver-popover-arrow {
+      border-left-color: var(--anchor-color);
+  }
