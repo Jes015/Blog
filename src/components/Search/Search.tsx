@@ -9,7 +9,7 @@ export const Search = () => {
   const handleOnClick = () => {
     setModalOpen(!modalOpen)
   }
-  return(
+  return (
     <>
       {
         modalOpen &&

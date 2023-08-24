@@ -17,10 +17,11 @@ import rssfeedImg from "@/assets/images/rss-feed.svg"
       />
     </div>
     <div class="profileSection__info-author">
-      <span class="profileSection__author">{globalConfig.owner.name}</span>
-      <span class="profileSection__author-nickname"
-        >{globalConfig.owner.nickName}</span
-      >
+      <div class="profileSection__author-names-container">
+        <span class="profileSection__author">{globalConfig.owner.name}</span>
+        <span class="profileSection__author-nickname">{globalConfig.owner.nickName}</span>
+      </div>
+      <span>Description</span>
     </div>
   </header>
   <main class="profileSection__main">
@@ -41,7 +42,6 @@ import rssfeedImg from "@/assets/images/rss-feed.svg"
   .profileSection__header {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
   }
 
   .profileSection__image-container {
@@ -64,23 +64,34 @@ import rssfeedImg from "@/assets/images/rss-feed.svg"
     flex-direction: column;
   }
   .profileSection__author {
-    font-size: 1.7em;
-    font-weight: 800;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.25em;
   }
   .profileSection__author-nickname {
     color: var(--secondary-text-color);
-    font-size: 1.2em;
-    font-weight: 500;
+    font-size: 1.25em;
+    font-weight: 300;
+    line-height: 1.25em;
+  }
+
+  .profileSection__author-names-container {
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .profileSection__button {
-    max-height: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.3em;
     width: 100%;
-    padding: 0.6em;
+    padding: 0.35715em 0;
+    height: 2.286em;
+    font-size: 0.875em;
+    font-weight: 500;
+    line-height: 1.429em;
   }
 
   .profileSection__main > * {

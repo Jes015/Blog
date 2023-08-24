@@ -1,8 +1,11 @@
 import { globalConfig } from "@/config"
 
-export const getPathName = (url: URL) => {
-    const pathname = url.pathname
-    let newPathName = pathname.split('/').join(' / ')
-    newPathName = globalConfig.owner.nickName + newPathName
-    return newPathName
+export const getBreadcrumbs = (url: URL) => {
+    const pathname = `${globalConfig.owner.nickName}/` + url.pathname
+    const pathSplit = pathname.split('/')
+
+    const lastPartOfThePath = pathSplit.pop()
+    const firstPartOfThePath = pathSplit.join(' / ')
+
+    return {firstPartOfThePath, lastPartOfThePath}
 }

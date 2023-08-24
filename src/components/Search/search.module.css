@@ -6,9 +6,9 @@
   border: 0.1em solid var(--border-color);
   border-radius: var(--border-radius-value);
   color: var(--input-text-color);
-  width: 22.875em;
-  height: 2.6em;
-  padding: 1em 0.6em;
+  width: 29.5em;
+  height: 2.354em;
+  padding: 0.36768em 0.6em;
   font-size: 0.85em;
   cursor: pointer;
 }
