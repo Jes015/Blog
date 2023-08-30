@@ -1,10 +1,19 @@
----
-import { Post } from "@/components"
+ ---
+import { PostCard } from "@/components"
 import SectionLayout from "@/layouts/SectionLayout.astro"
 ---
 
-<SectionLayout title="Last Posts" type="postLayout__main">
-  <Post
+<SectionLayout title="Last Posts" classLayout="postLayout__main--flex">
+  <PostCard
+  title="holaaa"
+    dynamicStyles={{
+      border: "post--border",
+      padding: "post--padding-all",
+      borderRadius: "post--border-radius-04",
+      anchor: "post__anchor--097",
+    }}
+  />
+  <PostCard
     client:only="react"
     dynamicStyles={{
       border: "post--border",
@@ -13,7 +22,7 @@ import SectionLayout from "@/layouts/SectionLayout.astro"
       anchor: "post__anchor--097",
     }}
   />
-  <Post
+  <PostCard
     client:only="react"
     dynamicStyles={{
       border: "post--border",
@@ -22,7 +31,7 @@ import SectionLayout from "@/layouts/SectionLayout.astro"
       anchor: "post__anchor--097",
     }}
   />
-  <Post
+  <PostCard
     client:only="react"
     dynamicStyles={{
       border: "post--border",
@@ -31,7 +40,52 @@ import SectionLayout from "@/layouts/SectionLayout.astro"
       anchor: "post__anchor--097",
     }}
   />
-  <Post
+  <PostCard
+    client:only="react"
+    dynamicStyles={{
+      border: "post--border",
+      padding: "post--padding-all",
+      borderRadius: "post--border-radius-04",
+      anchor: "post__anchor--097",
+    }}
+  />
+  <PostCard
+    client:only="react"
+    dynamicStyles={{
+      border: "post--border",
+      padding: "post--padding-all",
+      borderRadius: "post--border-radius-04",
+      anchor: "post__anchor--097",
+    }}
+  />
+  <PostCard
+    client:only="react"
+    dynamicStyles={{
+      border: "post--border",
+      padding: "post--padding-all",
+      borderRadius: "post--border-radius-04",
+      anchor: "post__anchor--097",
+    }}
+  />
+  <PostCard
+    client:only="react"
+    dynamicStyles={{
+      border: "post--border",
+      padding: "post--padding-all",
+      borderRadius: "post--border-radius-04",
+      anchor: "post__anchor--097",
+    }}
+  />
+  <PostCard
+    client:only="react"
+    dynamicStyles={{
+      border: "post--border",
+      padding: "post--padding-all",
+      borderRadius: "post--border-radius-04",
+      anchor: "post__anchor--097",
+    }}
+  />
+  <PostCard
     client:only="react"
     dynamicStyles={{
       border: "post--border",

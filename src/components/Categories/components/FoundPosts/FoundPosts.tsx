@@ -1,7 +1,7 @@
-import { Post } from "@/components"
+import { PostCard } from "@/components"
 
 const numRep = 10
-const postArray = Array(numRep).fill((key: number) => <Post key={key}
+const postArray = Array(numRep).fill((key: number) => <PostCard key={key}
     dynamicStyles={{
         border: 'post--border-top',
         padding: "post--padding-y",

@@ -6,7 +6,6 @@ import "@/styles/normalize.css"
 
 import Driver from "@/components/Driver/Driver.astro"
 import Header from "@/components/Header.astro"
-import ProfileSection from "@/components/Sections/ProfileSection.astro"
 import { ViewTransitions } from "astro:transitions"
 
 interface Props {
@@ -34,10 +33,7 @@ const { title } = Astro.props;
     <main>
       <div class="wrap">
         <div class="sectionLayout">
-          <ProfileSection transition:persist />
-          <div class="sectionLayout__second-container">
             <slot />
-          </div>
         </div>
       </div>
     </main>
@@ -46,15 +42,14 @@ const { title } = Astro.props;
         margin: auto;
         margin-top: 1.5em;
         width: 100%;
-        max-width: 89vw;
-        max-width: 89vw;
+        max-width: 50dvw;
+        max-width: 50vw;
       }
 
       .sectionLayout {
         width: 100%;
-        display: grid;
-        grid-template-columns: 18.5em 1fr;
-        gap: 1.5em;
+        display: flex;
+        flex-direction:column;
       }
 
       .sectionLayout__second-container {
