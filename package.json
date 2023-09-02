@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/react": "^2.3.2",
     "@fontsource/roboto": "^5.0.8",
-    "@types/react": "^18.2.20",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@uiw/react-heat-map": "2.1.1",
     "@uiw/react-tooltip": "^4.21.28",
