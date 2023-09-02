@@ -1,15 +1,13 @@
 ---
 import { CRoutes } from "@/models";
-import { Image } from "astro:assets";
 ---
 
 <nav class="nav" id="header__nav-list">
   <ul id="nav__list" class="nav__list">
     {
       Object.values(CRoutes).map((route) => (
-        <li class={"nav__item"}>
+        <li>
           <a class={"nav__ancord"} href={route.path}>
-            <Image src={route.iconData} alt={`${route.name} icon`} width="19" />
             <span>{route.name}</span>
           </a>
         </li>
@@ -20,9 +18,13 @@ import { Image } from "astro:assets";
 
 <style>
   .nav {
-    display: flex;
+    display: inline-flex;
     position: relative;
     font-size: 0.95em;
+    background-color: var(--body-background-color);
+    border: 0.1em solid var(--border-color);
+    border-radius: 0.35em;
+    box-shadow: #222222 0px 0px 5px;
   }
 
   .nav__list {
@@ -30,45 +32,41 @@ import { Image } from "astro:assets";
     align-items: center;
     gap: 0.4em;
     list-style: none;
-    font-size: 0.92105em;
-    min-height: 3.38em;
-  }
-
-  .nav__item {
-    display: flex;
-    position: relative;
-    display: inline-block;
-    padding: 0.42857142857em 0;
-    border-bottom: 0.2em solid transparent;
-    
+    min-height: 2em;
+    padding: 0.2em;
   }
 
   .nav__ancord {
     display: flex;
     align-items: center;
     gap: 0.4em;
-    border-radius: 0.4em;
+    border-radius: 0.2em;
     padding: 0 0.5263em;
     transition: 0.15s ease background-color;
-    line-height: 2.14397em;
+    line-height: 1.8em;
   }
 
   .nav__ancord--selected {
-    font-weight: 800;
+    font-weight: 500;
+    background-color: var(--secondary-background-color);
+    animation: selectedAnimation 0.8s 1;
+    border: none;
   }
 
-  .nav__item--selected::after {
-    content: "";
-    position: absolute;
-    bottom: calc(50% - 25px);
-    background-color: #ec775c;
-    height: 0.132em;
-    width: 100%;
-    border-radius: 0.1em;
-  }
+  @keyframes selectedAnimation {
+    0% {
+      filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
+    }
+    50% {
+      filter: drop-shadow(0px 0px 40px rgba(255, 255, 255, 0.664));
 
-  .nav__ancord:hover {
-    background-color: var(--card-background-color);
+    }
+    70% {
+      filter: drop-shadow(0px 0px 50px rgba(255, 255, 255, 0.401));
+    }
+    100% {
+      filter: drop-shadow(0px 0px 50px rgba(255, 255, 255, 0));
+    }
   }
 </style>
 

@@ -1,22 +1,10 @@
 ---
-import { Search } from "@/components/"
-import Breadcrumbs from "@/components/Breadcrumbs.astro"
 import Navigation from "@/components/Navigation.astro"
 ---
 
 <header class="header">
   <div class="header__container">
-    <div class="header__second-container">
-      <span class="header__breadcrumbs" id="header__breadcrumbs">
-        <Breadcrumbs />
-      </span>
-      <div class="search__container">
-        <Search client:load />
-      </div>
-    </div>
-    <div class="header__nav-container">
-      <Navigation />
-    </div>
+    <Navigation />
   </div>
 </header>
 
@@ -24,49 +12,13 @@ import Navigation from "@/components/Navigation.astro"
   .header {
     display: flex;
     align-items: center;
-    background-color: var(--header-background-color);
-    border-bottom: 0.1em solid var(--border-color);
+    padding: 1em;
   }
 
   .header__container {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
-  }
-
-  .header__second-container {
-    flex-grow: 1;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em;
-    padding-bottom: 0.5em;
-    font-weight: 800;
-    text-transform: capitalize;
-    text-wrap: balance;
-    max-height: 3.5em;
-  }
-
-  .header__nav-container {
-    padding: 0 1.05262em;
-  }
-
-
-  .search__container {
-    display: flex;
-    justify-content: right;
-    width: 22.875em;
-    height: 2.6em;
-  }
-
-  @media (width < 511px) {
-    .header {
-      padding: 0em 1em;
-    }
-    .search__container {
-      width: auto;
-    }
+    justify-content: center;
   }
 </style>
