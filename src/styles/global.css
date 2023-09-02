@@ -1,22 +1,23 @@
 :root {
     --body-background-color: #000000;
     --secondary-background-color: #67676754;
-    --font-size: 16px;
+    --font-size: 18px;
     --border-color: rgba(28,28,28,1);
     --text-color: #d6e4f1;
     --secondary-text-color: #ccd9e6;
-
+    --border-radius-value: 0.5em;
+    --secondary-border-radius-value: 0.3em;
     --font-family: 'roboto';
+    --button-background-color: transparent;
+    --button-background-color-hover: #f1f1f1;
+
     --terceary-text-color: #68737f;
     --header-background-color: #1c2128;
     --card-background-color: #2b3038;
     --secondary-border-color: #cdd9e51a;
     --terceary-border-color: #cdd9e533;
-    --button-background-color: #373e47;
-    --secondary-button-background-color: #444c56;
     --anchor-color: #539bf5;
     --input-text-color: #636e7b;
-    --border-radius-value: 0.5em;
     --backdrop-color: #1c2128cc;
     --background-heatmap-rec: var(--secondary-background-color);
     --background-heatmap-rec-2-day: #0e4429;
@@ -47,7 +48,7 @@ body {
 
 a {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 ul {
@@ -61,7 +62,7 @@ button {
     align-items: center;
     padding: 0.2em;
     border: 0.1em solid var(--secondary-border-color);
-    border-radius: 0.42857142857em;
+    border-radius: 0.2em;
     color: var(--text-color);
     background-color: var(--button-background-color);
     cursor: pointer;
@@ -76,6 +77,14 @@ input {
     color: var(--text-color);
 }
 
+p {
+    color: var(--secondary-text-color);
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
 input:hover {
     border: 0.12em solid var(--anchor-color);
 }
@@ -85,8 +94,9 @@ input:focus {
 }
 
 button:hover {
-    background-color: var(--secondary-button-background-color);
+    background-color: var(--button-background-color-hover);
     border-color: var(--terceary-border-color);
+    color: black;
 }
 
 /* @media (width >=1000px) {

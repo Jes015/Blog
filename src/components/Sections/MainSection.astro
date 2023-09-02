@@ -1,0 +1,45 @@
+---
+import { Search } from "../Search/Search"
+
+---
+
+<section class="mainSection">
+    <header class="mainSection__header">
+        <span class="mainSection__title">Jes015's Blog</span>
+        <Search client:load />
+    </header>
+    <main class="mainSection__main">
+        <slot />
+    </main>
+</section>
+
+<style>
+    .mainSection {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.685);
+        border: 0.1em solid var(--border-color);
+        margin-bottom: 0.5em;
+        border-radius: 0.18em;
+        filter: drop-shadow(0px 0px 100px rgba(255, 255, 255, 0.078));
+    }
+
+    .mainSection__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.1em solid var(--border-color);
+        padding: 0.3em 0.5em;
+    }
+
+    .mainSection__title {
+        font-weight: 600;
+
+    }
+    .mainSection__main {
+        flex-grow: 1;
+    }
+
+</style>

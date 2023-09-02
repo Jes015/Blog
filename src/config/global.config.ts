@@ -19,5 +19,15 @@ export const globalConfig = {
     },
     localStorage: {
         wasGlobalStepsShowed: 'wasGlobalStepsShowed'
-    }
+    },
+    recommendedSites: [
+        {
+            name: 'Dev Vault',
+            url: 'https://dev-vault-ochre.vercel.app/'
+        },
+        {
+            name: 'TimeManager',
+            url: 'https://time-manager-zeta.vercel.app/'
+        }
+    ]
 }

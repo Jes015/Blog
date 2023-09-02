@@ -1,97 +1,48 @@
- ---
+---
 import { PostCard } from "@/components"
-import SectionLayout from "@/layouts/SectionLayout.astro"
 ---
 
-<SectionLayout title="Last Posts" classLayout="postLayout__main--flex">
-  <PostCard
-  title="holaaa"
-    dynamicStyles={{
-      border: "post--border",
-      padding: "post--padding-all",
-      borderRadius: "post--border-radius-04",
-      anchor: "post__anchor--097",
-    }}
-  />
-  <PostCard
-    client:only="react"
-    dynamicStyles={{
-      border: "post--border",
-      padding: "post--padding-all",
-      borderRadius: "post--border-radius-04",
-      anchor: "post__anchor--097",
-    }}
-  />
-  <PostCard
-    client:only="react"
-    dynamicStyles={{
-      border: "post--border",
-      padding: "post--padding-all",
-      borderRadius: "post--border-radius-04",
-      anchor: "post__anchor--097",
-    }}
-  />
-  <PostCard
-    client:only="react"
-    dynamicStyles={{
-      border: "post--border",
-      padding: "post--padding-all",
-      borderRadius: "post--border-radius-04",
-      anchor: "post__anchor--097",
-    }}
-  />
-  <PostCard
-    client:only="react"
-    dynamicStyles={{
-      border: "post--border",
-      padding: "post--padding-all",
-      borderRadius: "post--border-radius-04",
-      anchor: "post__anchor--097",
-    }}
-  />
-  <PostCard
-    client:only="react"
-    dynamicStyles={{
-      border: "post--border",
-      padding: "post--padding-all",
-      borderRadius: "post--border-radius-04",
-      anchor: "post__anchor--097",
-    }}
-  />
-  <PostCard
-    client:only="react"
-    dynamicStyles={{
-      border: "post--border",
-      padding: "post--padding-all",
-      borderRadius: "post--border-radius-04",
-      anchor: "post__anchor--097",
-    }}
-  />
-  <PostCard
-    client:only="react"
-    dynamicStyles={{
-      border: "post--border",
-      padding: "post--padding-all",
-      borderRadius: "post--border-radius-04",
-      anchor: "post__anchor--097",
-    }}
-  />
-  <PostCard
-    client:only="react"
-    dynamicStyles={{
-      border: "post--border",
-      padding: "post--padding-all",
-      borderRadius: "post--border-radius-04",
-      anchor: "post__anchor--097",
-    }}
-  />
-  <PostCard
-    client:only="react"
-    dynamicStyles={{
-      border: "post--border",
-      padding: "post--padding-all",
-      borderRadius: "post--border-radius-04",
-      anchor: "post__anchor--097",
-    }}
-  />
-</SectionLayout>
+<section id="layout__post">
+  <header class="sectionLayout__header">
+    <h2 class="sectionLayout__title">Last Posts</h2>
+  </header>
+  <main class="postLayout__main">
+    <PostCard title="holaaa" />
+    <PostCard client:only="react" />
+    <PostCard client:only="react" />
+    <PostCard client:only="react" />
+    <PostCard client:only="react" />
+    <PostCard client:only="react" />
+    <PostCard client:only="react" />
+    <PostCard client:only="react" />
+    <PostCard client:only="react" />
+    <PostCard client:only="react" />
+  </main>
+</section>
+
+<style>
+  .sectionLayout__title {
+    display: inline-block;
+    position: relative;
+    padding: 0em 1em;
+    font-size: 1.1em;
+    filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.4811));
+  }
+
+  .sectionLayout__header {
+    margin-bottom: 1em;
+  }
+
+  .postLayout__main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (width < 670px) {
+    .postLayout__main {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
