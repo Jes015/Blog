@@ -16,16 +16,12 @@
     "@fontsource/roboto": "^5.0.8",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@uiw/react-heat-map": "2.1.1",
-    "@uiw/react-tooltip": "^4.21.28",
-    "astro": "^2.10.14",
-    "cmdk": "^0.2.0",
+    "astro": "^3.0.7",
     "driver.js": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/d3": "^7.4.0",
     "husky": "8.0.3"
   }
 }
