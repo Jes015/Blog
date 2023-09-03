@@ -1,10 +1,11 @@
 ---
-import { PostCard } from "@/components"
+import { Filters, PostCard } from "@/components"
 ---
 
 <section id="layout__post">
   <header class="sectionLayout__header">
-    <h2 class="sectionLayout__title">Last Posts</h2>
+    <h2 class="sectionLayout__title">Posts</h2>
+    <Filters />
   </header>
   <main class="postLayout__main">
     <PostCard title="holaaa" />
@@ -21,16 +22,19 @@ import { PostCard } from "@/components"
 </section>
 
 <style>
+    .sectionLayout__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0em 1em;
+      margin-bottom: 1em;
+    }
+
   .sectionLayout__title {
     display: inline-block;
     position: relative;
-    padding: 0em 1em;
     font-size: 1.1em;
     filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.4811));
-  }
-
-  .sectionLayout__header {
-    margin-bottom: 1em;
   }
 
   .postLayout__main {

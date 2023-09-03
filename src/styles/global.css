@@ -2,7 +2,7 @@
     --body-background-color: #000000;
     --secondary-background-color: #67676754;
     --font-size: 18px;
-    --border-color: rgba(28,28,28,1);
+    --border-color: rgba(28, 28, 28, 1);
     --text-color: #d6e4f1;
     --secondary-text-color: #ccd9e6;
     --border-radius-value: 0.5em;
@@ -69,11 +69,19 @@ button {
 }
 
 input {
+    padding: 0.5em;
+}
+
+select {
+    padding-inline: 0.4em;
+}
+
+input,
+select {
     background-color: transparent;
     border: 0.1em solid var(--border-color);
     border-radius: 0.2em;
     outline: none;
-    padding: 0.5em;
     color: var(--text-color);
 }
 
@@ -85,12 +93,10 @@ p {
 ul {
     list-style: none;
 }
-input:hover {
-    border: 0.12em solid var(--anchor-color);
-}
 
-input:focus {
-    border: 0.12em solid var(--anchor-color);
+input:focus-within,
+select:focus-within {
+    border: 0.1em solid var(--anchor-color);
 }
 
 button:hover {

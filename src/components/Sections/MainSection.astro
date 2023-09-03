@@ -1,12 +1,10 @@
 ---
-import { Search } from "../Search/Search"
 
 ---
 
 <section class="mainSection">
     <header class="mainSection__header">
         <span class="mainSection__title">Jes015's Blog</span>
-        <Search client:load />
     </header>
     <main class="mainSection__main">
         <slot />
@@ -32,6 +30,8 @@ import { Search } from "../Search/Search"
         justify-content: space-between;
         border-bottom: 0.1em solid var(--border-color);
         padding: 0.3em 0.5em;
+        min-height: 2.639em;
+        height: 100%;
     }
 
     .mainSection__title {
