@@ -4,18 +4,22 @@ import { globalConfig } from "@/config"
 ---
 
 <section class="categoriesSection">
-    <h4 class="categoriesSection__title">Sites</h4>
-    <ul class="categoriesSection__list">
-        {
-            globalConfig.recommendedSites.map((recommendSite) => (
-                <li>
-                    <a href={recommendSite.url} target="_blank">
-                        {recommendSite.name}
-                    </a>
-                </li>
-            ))
-        }
-    </ul>
+    <header>
+        <h4 class="categoriesSection__title">Recomended Sites</h4>
+    </header>
+    <main>
+        <ul class="categoriesSection__list">
+            {
+                globalConfig.recommendedSites.map((recommendSite) => (
+                    <li>
+                        <a href={recommendSite.url} target="_blank">
+                            {recommendSite.name}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
 </section>
 
 <style>
