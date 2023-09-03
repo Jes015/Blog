@@ -1,0 +1,18 @@
+.filterBy__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterBy__label {
+    font-size: 0.75em;
+}
+
+.filterBy {
+    font-size: 0.85em;
+    border: 0.1em solid var(--border-color);
+    border-radius: var(--secondary-border-radius-value);
+    max-height: 2.0660130719em;
+    width: auto;
+    height: 100%;
+    color: white;
+}
