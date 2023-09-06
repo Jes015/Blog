@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import { getCollection } from "astro:content"
+
+export async function getStaticPaths() {
+    const blogEntries = await getCollection("posts");
+
+    return blogEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+    <div class="wrap">
+        <h2 transition:name="post_title">{entry.data.title}</h2>
+        <Content />
+    </div>
+</Layout>
+
+<style>
+    .wrap {
+        font-size: 0.9em;
+        padding: 0.2em 1em;
+    }
+
+
+</style>

@@ -1,19 +1,16 @@
 ---
 import LastPostSection from "@/components/Sections/LastPostSection.astro"
 import LastPostsSection from "@/components/Sections/LastPostsSection.astro"
-import MainSection from "@/components/Sections/MainSection.astro"
 import CategoriesSection from "@/components/Sections/SitesSection.astro"
 import Layout from "@/layouts/Layout.astro"
 ---
 
 <Layout title="Index">
-    <MainSection>
-        <div class="firstSections__container">
-            <LastPostSection />
-            <CategoriesSection />
-        </div>
-        <LastPostsSection />
-    </MainSection>
+    <div class="firstSections__container">
+        <LastPostSection />
+        <CategoriesSection />
+    </div>
+    <LastPostsSection />
 </Layout>
 
 <style>

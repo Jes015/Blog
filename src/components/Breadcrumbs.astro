@@ -1,11 +1,18 @@
 ---
+import { CRoutes } from "@/models"
 import { getBreadcrumbs } from "@/utils"
 const breadcrumbs = getBreadcrumbs(Astro.url);
 ---
 
 <div class="breadcrumbs">
-  <span class="breadcrumbs__first">{breadcrumbs.firstPartOfThePath}</span>
-  <span>{breadcrumbs.lastPartOfThePath}</span>
+  {
+    Astro.url.pathname === CRoutes.home.path
+    ?
+    <span class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >{breadcrumbs.firstPartOfThePath}</span>
+    :
+    <a href={CRoutes.home.path} class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >{breadcrumbs.firstPartOfThePath}</a>
+  }
+  <span class="breadcrumbs__last">{breadcrumbs.lastPartOfThePath}</span>
 </div>
 
 <style>
@@ -13,7 +20,8 @@ const breadcrumbs = getBreadcrumbs(Astro.url);
     font-size: 0.875em;
   }
   .breadcrumbs__first {
-    font-weight: 100;
+    font-weight: 900;
+    font-size: 1.3em;
   }
   .breadcrumbs__last {
     font-size: 0.875em;

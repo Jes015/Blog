@@ -1,10 +1,10 @@
 ---
-
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
 ---
 
 <section class="mainSection">
     <header class="mainSection__header">
-        <span class="mainSection__title">Jes015's Blog</span>
+        <Breadcrumbs />
     </header>
     <main class="mainSection__main">
         <slot />
@@ -34,10 +34,15 @@
         height: 100%;
     }
 
-    .mainSection__title {
+    .mainSection__firstBreadcrumbs {
         font-weight: 600;
-
     }
+
+    .mainSection__secondBradcrumbs {
+        font-size: 0.5em;
+        font-weight: 300;
+    }
+
     .mainSection__main {
         flex-grow: 1;
     }

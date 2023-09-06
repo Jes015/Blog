@@ -1,5 +1,6 @@
 export const globalConfig = {
     owner: {
+        siteName: 'Jes015\'s Blog',
         name: 'Jesus Oyola',
         nickName: 'Jes015',
         socials: [
