@@ -1,25 +1,29 @@
 ---
+import { getCollection } from "astro:content"
+
+const collection = await getCollection('posts')
+const lastPost = collection.pop()
+const lastPostData = lastPost?.data
+const lasPostSlug = lastPost?.slug
 ---
 
 <section class="lastPostSection">
     <div>
-        <h2 class="lastPostSection__title">
-            Por qué es necesaria la prop key en react?
+        <h2 class="lastPostSection__title" transition:name="post_title">
+            {lastPostData?.title}
         </h2>
         <p class="lastPostSection__description">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
-            natus, odit veniam eius hic quam corporis temporibus ipsa rerum
-            soluta numquam vero maxime nemo deserunt neque voluptatum animi qui
-            facere.
+            {lastPostData?.description}
         </p>
     </div>
     <div>
-        <button class="lastPostSection__button">Check out</button>
+        <a href=`/post/${lasPostSlug}` class="lastPostSection__button">Check out</a>
     </div>
 </section>
 
 <style>
     .lastPostSection {
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
     }

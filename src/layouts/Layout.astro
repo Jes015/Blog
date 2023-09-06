@@ -6,6 +6,7 @@ import "@/styles/normalize.css"
 
 import Driver from "@/components/Driver/Driver.astro"
 import Header from "@/components/Header.astro"
+import MainSection from "@/components/Sections/MainSection.astro"
 import { ViewTransitions } from "astro:transitions"
 
 interface Props {
@@ -33,11 +34,13 @@ const { title } = Astro.props;
     <main>
       <div class="wrap">
         <div class="sectionLayout">
+          <MainSection>
             <slot />
+          </MainSection>
         </div>
       </div>
     </main>
-    <style is:global>
+    <style>
       .wrap {
         margin: auto;
         margin-top: 1.5em;
