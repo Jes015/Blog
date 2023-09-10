@@ -1,16 +1,16 @@
 ---
-import { CRoutes } from "@/models"
+import { CFrontRoutes } from "@/models"
 import { getBreadcrumbs } from "@/utils"
 const breadcrumbs = getBreadcrumbs(Astro.url);
 ---
 
 <div class="breadcrumbs">
   {
-    Astro.url.pathname === CRoutes.home.path
+    Astro.url.pathname === CFrontRoutes.home.path
     ?
     <span class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >{breadcrumbs.firstPartOfThePath}</span>
     :
-    <a href={CRoutes.home.path} class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >{breadcrumbs.firstPartOfThePath}</a>
+    <a href={CFrontRoutes.home.path} class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >{breadcrumbs.firstPartOfThePath}</a>
   }
   <span class="breadcrumbs__last">{breadcrumbs.lastPartOfThePath}</span>
 </div>

@@ -7,5 +7,6 @@ export default defineConfig({
   experimental: {
     optimizeHoistedScript: true    
   },
+  output: 'hybrid',
   integrations: [react()]
 });
