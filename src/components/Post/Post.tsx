@@ -2,17 +2,19 @@ import { Tech } from '@/components/'
 import styles from './post.module.css'
 
 interface IProps {
-  title?: string
+  title: string
+  url?: string
+  description?: string
 }
 
-export const PostCard: React.FC<IProps> = ({ title }) => {
+export const PostCard: React.FC<IProps> = ({ title, url, description }) => {
   return (
     <article
       className={styles.post}>
       <header className={styles.post__header}>
         <div className={styles["post__title-container"]}>
           <a
-            href="#"
+            href={url}
             className={styles.post__anchor}
           >
             {title ?? 'Why github is the best way?'}
@@ -22,9 +24,7 @@ export const PostCard: React.FC<IProps> = ({ title }) => {
       </header>
       <main className={styles.post__main}>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore natus,
-          odit veniam eius hic quam corporis temporibus ipsa rerum soluta numquam
-          vero maxime nemo deserunt neque voluptatum animi qui facere.
+          {description}
         </p>
       </main>
       <footer>

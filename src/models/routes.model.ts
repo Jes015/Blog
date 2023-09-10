@@ -1,4 +1,4 @@
-export const CRoutes = {
+export const CFrontRoutes = {
     home: {
         name: 'Home',
         path: '/',
@@ -7,8 +7,13 @@ export const CRoutes = {
         name: 'Posts',
         path: '/posts',
     },
-    post: {
-        name: 'Post',
-        path: '/post',
+    post(postSlug: string) {
+        return `/post/${postSlug}`
+    }
+}
+
+export const CBackRoutes = {
+    posts (searchParam: string, category?: string) {
+        return `/api/posts?name=${searchParam}&type=${category}`
     }
 }
