@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content"
 
 const collection = await getCollection('posts')
-const lastPost = collection.pop()
+const lastPost = collection.at(-1)
 const lastPostData = lastPost?.data
 const lasPostSlug = lastPost?.slug
 ---
