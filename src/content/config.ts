@@ -24,6 +24,6 @@ const authorsCollection = defineCollection({
 })
 
 export const collections = {
-  posts: postsCollection,
-  authors: authorsCollection
+  'posts': postsCollection,
+  'authors': authorsCollection
 };
