@@ -62,18 +62,37 @@ const { title } = Astro.props;
         gap: 1.5em
       }
 
-      @media (width <= 1011px) {
-        .sectionLayout {
-          grid-template-columns: 1fr;
+      
+      
+      @media (width <= 1150px) {
+        .wrap {
+          max-width: 60vw;
+          max-width: 60dvw;
         }
       }
 
-      @media (width >= 1380px) {
+      @media (width <= 920px) {
         .wrap {
-          max-width: 80.8571428571dvw;
-          max-width: 80.8571428571vw;
+          max-width: 80vw;
+          max-width: 80dvw;
         }
       }
+
+      @media (width <= 680px) {
+        .wrap {
+          max-width: 90vw;
+          max-width: 90dvw;
+        }
+      }
+
+      @media (width <= 500px) {
+        .wrap {
+          max-width: 98vw;
+          max-width: 98dvw;
+        }
+      }
+
+      
     </style>
   </body>
 </html>

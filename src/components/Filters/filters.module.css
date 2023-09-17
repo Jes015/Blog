@@ -4,3 +4,9 @@
     height: 100%;
     overflow: hidden;
 }
+
+@media (width <= 550px) {
+    .filters{
+        width: 100%;
+    }
+}
