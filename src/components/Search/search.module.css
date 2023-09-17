@@ -40,16 +40,11 @@
   border: 0.1em solid var(--anchor-color);
 }
 
-@media (width < 800px) {
+@media (width <= 550px) {
+  .search__container{
+      flex-grow: 1;
+  }
   .search {
-    width: auto;
-  }
-  
-  .search__command-icon {
-    display: none;
-  }
-  
-  .search__text {
-    display: none;
+    max-width: 100%;
   }
 }
