@@ -3,6 +3,9 @@ import { LastPostsSection } from '@/components'
 import LastPostSection from "@/components/Sections/LastPostSection.astro"
 import CategoriesSection from "@/components/Sections/SitesSection.astro"
 import Layout from "@/layouts/Layout.astro"
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('posts')
 ---
 
 <Layout title="Index">
@@ -10,7 +13,7 @@ import Layout from "@/layouts/Layout.astro"
         <LastPostSection />
         <CategoriesSection />
     </div>
-    <LastPostsSection client:load />
+    <LastPostsSection client:load postsData={posts} />
 </Layout>
 
 <style>

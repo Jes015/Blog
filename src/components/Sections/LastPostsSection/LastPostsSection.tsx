@@ -1,60 +1,38 @@
-import { Filters, PostCard } from "@/components"
-import { useDebounce } from "@/hooks"
-import { CFrontRoutes, postCategories, type PostArray } from "@/models"
-import { getPosts } from "@/services"
-import { useEffect, useState } from "react"
+import { Filters, NotFound, PostCard } from "@/components"
+import { usePosts } from "@/hooks"
+import { CFrontRoutes, type PostArray } from "@/models"
 import styles from './lastPostsSection.module.css'
 
-export const LastPostsSection = () => {
-    const [posts, setPosts] = useState<PostArray>([])
-    const [defaultSearchParamValue, setDefaultSearchParamValue] = useState('')
-    const [defaultFilterBy, setDefaultFilterBy] = useState(postCategories.javascript)
-    const [error, setError] = useState<null | string>(null)
-    const { newValue } = useDebounce(defaultSearchParamValue)
+interface IProps {
+    postsData: PostArray
+}
 
-    useEffect(() => {
-        if (newValue == null) {
-            return
-        }
-
-        const asyncExecutionContext = async () => {
-            const data = await getPosts(newValue, defaultFilterBy)
-
-            if (data.postsData[0] == null) {
-                setError('Not found')
-                setPosts([])
-            } else {
-                setError(null)
-                setPosts(data.postsData)
-            }
-        }
-
-        void asyncExecutionContext()
-    }, [newValue, defaultFilterBy])
+export const LastPostsSection: React.FC<IProps> = ({ postsData }) => {
+    const { filteredPosts, setFilterByCategory, setSearchParamValue } = usePosts({ postsData })
 
     return (
         <section id="layout__post">
             <header className={styles.sectionLayout__header}>
                 <h2 className={styles.sectionLayout__title}>Posts</h2>
-                <Filters {...{ setDefaultSearchParamValue, setDefaultFilterBy }} />
+                <Filters {...{ setSearchParamValue, setFilterByCategory }} />
             </header>
             <main className={styles.postLayout__main}>
                 {
-                    error && <h1>{error}</h1>
-                }
-                {
-                    posts[0] != null &&
-                    posts.map((postData) => {
-                        console.log(postData)
-                        return (
-                            <PostCard
-                                key={postData.slug}
-                                title={postData.postData.data.title}
-                                description={postData.postData.data.description}
-                                url={CFrontRoutes.post(postData.slug)}
-                            />
-                        )
-                    })
+                    filteredPosts[0] != null
+                        ?
+                        filteredPosts.map((postData) => {
+                            return (
+                                <PostCard
+                                    key={postData.slug}
+                                    title={postData.data.title}
+                                    description={postData.data.description}
+                                    url={CFrontRoutes.post(postData.slug)}
+                                />
+                            )
+                        })
+
+                        :
+                        <NotFound />
                 }
             </main>
         </section>

@@ -1,5 +1,5 @@
 ---
-title: Why is github the best option
+title: Why is geithub the best option
 description: Tlksjdfjklsafjsl
 types: [javascript]
 publishDate: 2022-01-01
