@@ -3,14 +3,14 @@ import { useId } from 'react'
 import styles from './filterBy.module.css'
 
 interface Props {
-    setDefaultFilterBy: React.Dispatch<React.SetStateAction<string>>
+    setFilterByCategory: React.Dispatch<React.SetStateAction<string>>
 }
-export const FilterBy: React.FC<Props> = ({ setDefaultFilterBy }) => {
+export const FilterBy: React.FC<Props> = ({ setFilterByCategory }) => {
     const id = useId()
 
     const handleOnInput = (event: React.FormEvent<HTMLSelectElement>) => {
-        const newInput = event.currentTarget.value.toLocaleLowerCase()
-        setDefaultFilterBy(newInput)
+        const newInput = event.currentTarget.value
+        setFilterByCategory(newInput)
     }
     return (
         <div className={styles.filterBy__container}>

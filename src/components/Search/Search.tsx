@@ -3,9 +3,9 @@ import { useId, useState } from "react"
 import styles from './search.module.css'
 
 interface Props {
-  setDefaultSearchParamValue: React.Dispatch<React.SetStateAction<string>>
+  setSearchParamValue: React.Dispatch<React.SetStateAction<string>>
 }
-export const Search: React.FC<Props> = ({ setDefaultSearchParamValue }) => {
+export const Search: React.FC<Props> = ({ setSearchParamValue }) => {
   const [modalOpen, setModalOpen] = useState(false)
   const inputId = useId()
 
@@ -15,7 +15,7 @@ export const Search: React.FC<Props> = ({ setDefaultSearchParamValue }) => {
 
   const handleOnInputChange = (event: React.FormEvent<HTMLInputElement>) => {
     const value = event.currentTarget.value
-    setDefaultSearchParamValue(value)
+    setSearchParamValue(value)
   }
 
   return (
