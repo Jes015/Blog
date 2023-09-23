@@ -1,4 +1,7 @@
+**Sorry for the license**, but many academies are stealing content and not making any modifications to the code. They present the entire project as if they had created it themselves. **If you are a content creator who helps the developer community for FREE**, please reach out to me on my social media, and I can grant you permissions.
+
 # Blog
+
 [![pipeline](https://github.com/Jes015/Blog/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/Jes015/Blog/actions/workflows/pipeline.yaml)
 
 ## 🧞 Commands
