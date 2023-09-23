@@ -1,18 +1,22 @@
 import { Tech } from '@/components/'
+import type { TTech } from '@/models'
+import { getTimeAgo } from '@/utils'
 import styles from './post.module.css'
 
 interface IProps {
   title: string
-  url?: string
-  description?: string
+  url: string
+  description: string
+  techs: string[]
+  publishDate: number
 }
 
-export const PostCard: React.FC<IProps> = ({ title, url, description }) => {
+export const PostCard: React.FC<IProps> = ({ title, url, description, techs, publishDate }) => {
   return (
     <article
       className={styles.post}>
       <header className={styles.post__header}>
-        <div className={styles["post__title-container"]}>
+        <div className={styles['post__title-container']}>
           <a
             href={url}
             className={styles.post__anchor}
@@ -20,7 +24,7 @@ export const PostCard: React.FC<IProps> = ({ title, url, description }) => {
             {title ?? 'Why github is the best way?'}
           </a>
         </div>
-        <time className={styles.post__time} dateTime="2023-07-07">3 days ago</time>
+        <time className={styles.post__time} dateTime="2023-07-07">{getTimeAgo(publishDate)}</time>
       </header>
       <main className={styles.post__main}>
         <p>
@@ -29,7 +33,11 @@ export const PostCard: React.FC<IProps> = ({ title, url, description }) => {
       </main>
       <footer>
         <div>
-          <Tech name='javascript' />
+          {
+            techs.map((tech) => {
+              return <Tech key={tech} name={tech as TTech} />
+            })
+          }
         </div>
       </footer>
     </article>

@@ -1,5 +1,5 @@
-import { SearchIcon } from "@/components"
-import { useId, useState } from "react"
+import { SearchIcon } from '@/components'
+import { useId, useState } from 'react'
 import styles from './search.module.css'
 
 interface Props {

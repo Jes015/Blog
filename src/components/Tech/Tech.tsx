@@ -1,20 +1,20 @@
-import { CTechs, type TTech } from "@/models"
+import { CTechs, type TTech } from '@/models'
 import styles from './tech.module.css'
 
 interface IProps {
-    name: TTech
+  name: TTech
 }
 
 export const Tech: React.FC<IProps> = ({ name }) => {
-    return (
+  return (
         <div className={styles.tech}>
-            <div className={styles["tech__color-container"]} style={{ backgroundColor: CTechs[name].color }} />
+            <div className={styles['tech__color-container']} style={{ backgroundColor: CTechs[name].color }} />
             <span className={styles.tech__title}>{CTechs[name].name}</span>
         </div>
-    )
+  )
 }
 
-/* 
+/*
 import { CTechs, type TTech } from "@/models"
 
 interface Props {

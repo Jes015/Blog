@@ -1,32 +1,43 @@
-import { postCategories } from '@/models'
-import { useId } from 'react'
+import { CTechs, type TTech } from '@/models'
+import { useId, useRef } from 'react'
 import styles from './filterBy.module.css'
 
 interface Props {
-    setFilterByCategory: React.Dispatch<React.SetStateAction<string>>
+  setFilterByCategory: React.Dispatch<React.SetStateAction<string>>
 }
 export const FilterBy: React.FC<Props> = ({ setFilterByCategory }) => {
-    const id = useId()
+  const selectElementRef = useRef<HTMLSelectElement>()
+  const id = useId()
 
-    const handleOnInput = (event: React.FormEvent<HTMLSelectElement>) => {
-        const newInput = event.currentTarget.value
-        setFilterByCategory(newInput)
-    }
-    return (
-        <div className={styles.filterBy__container}>
+  const handleOnInput = (event: React.FormEvent<HTMLSelectElement>): void => {
+    const newInput = event.currentTarget.value
+    setFilterByCategory(newInput)
+  }
+
+  return (
+        <div
+            className={styles.filterBy__container}
+        >
             <label htmlFor={id} className={styles.filterBy__label}>
                 Filter by
             </label>
-            <select id={id} className={styles.filterBy} onInput={handleOnInput}>
-                {Object.values(postCategories).map((postCategory) => (
+            <select
+                ref={selectElementRef as React.LegacyRef<HTMLSelectElement>}
+                id={id}
+                className={styles.filterBy} onInput={handleOnInput}
+                style={{
+                  backgroundColor: CTechs[selectElementRef.current?.value.toLowerCase() as TTech]?.color ?? 'transparent'
+                }}
+            >
+                {Object.values(CTechs).map((postCategory) => (
                     <option
-                     key={postCategory}
-                     value={postCategory}
+                        key={postCategory.name}
+                        value={postCategory.name}
                     >
-                        {postCategory}
+                        {postCategory.name}
                     </option>
                 ))}
             </select>
         </div>
-    )
+  )
 }

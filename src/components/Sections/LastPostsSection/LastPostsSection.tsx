@@ -1,16 +1,16 @@
-import { Filters, NotFound, PostCard } from "@/components"
-import { usePosts } from "@/hooks"
-import { CFrontRoutes, type PostArray } from "@/models"
+import { Filters, NotFound, PostCard } from '@/components'
+import { usePosts } from '@/hooks'
+import { CFrontRoutes, type PostArray } from '@/models'
 import styles from './lastPostsSection.module.css'
 
 interface IProps {
-    postsData: PostArray
+  postsData: PostArray
 }
 
 export const LastPostsSection: React.FC<IProps> = ({ postsData }) => {
-    const { filteredPosts, setFilterByCategory, setSearchParamValue } = usePosts({ postsData })
+  const { filteredPosts, setFilterByCategory, setSearchParamValue } = usePosts({ postsData })
 
-    return (
+  return (
         <section id="layout__post">
             <header className={styles.sectionLayout__header}>
                 <h2 className={styles.sectionLayout__title}>Posts</h2>
@@ -19,22 +19,22 @@ export const LastPostsSection: React.FC<IProps> = ({ postsData }) => {
             <main className={styles.postLayout__main}>
                 {
                     filteredPosts[0] != null
-                        ?
-                        filteredPosts.map((postData) => {
-                            return (
+                      ? filteredPosts.map((postData) => {
+                        return (
                                 <PostCard
                                     key={postData.slug}
                                     title={postData.data.title}
                                     description={postData.data.description}
                                     url={CFrontRoutes.post(postData.slug)}
+                                    techs={postData.data.types}
+                                    publishDate={postData.data.publishDate}
                                 />
-                            )
-                        })
+                        )
+                      })
 
-                        :
-                        <NotFound />
+                      : <NotFound />
                 }
             </main>
         </section>
-    )
+  )
 }
