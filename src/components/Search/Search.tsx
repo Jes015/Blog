@@ -3,7 +3,7 @@ import { useId, useState } from 'react'
 import styles from './search.module.css'
 
 interface Props {
-  setSearchParamValue: React.Dispatch<React.SetStateAction<string>>
+  setSearchParamValue: (searchParam: string) => void
 }
 export const Search: React.FC<Props> = ({ setSearchParamValue }) => {
   const [modalOpen, setModalOpen] = useState(false)

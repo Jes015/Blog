@@ -3,7 +3,7 @@ import { useId, useRef } from 'react'
 import styles from './filterBy.module.css'
 
 interface Props {
-  setFilterByCategory: React.Dispatch<React.SetStateAction<string>>
+  setFilterByCategory: (category: string) => void
 }
 export const FilterBy: React.FC<Props> = ({ setFilterByCategory }) => {
   const selectElementRef = useRef<HTMLSelectElement>()

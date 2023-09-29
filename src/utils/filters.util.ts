@@ -3,11 +3,13 @@ import { CTechs, type PostArray, type PostData } from '@/models'
 interface IFiltersType {
   byCategory: string
   byValue: string
+  maxPosts: number
 }
 
 const defaultFiltersConfigValue: IFiltersType = {
   byCategory: CTechs.all.name,
-  byValue: ''
+  byValue: '',
+  maxPosts: 10
 }
 
 export class Filter {
@@ -24,7 +26,7 @@ export class Filter {
     const isByValueFilterByDefault = this.filtersConfig.byValue === defaultFiltersConfigValue.byValue
 
     if (isByValueFilterByDefault && isByCategoryFilterByDefault) {
-      return this.postsData
+      return this.getArrayByMaxPostsValue(this.postsData)
     }
 
     const newPostArray: PostArray = []
@@ -39,7 +41,11 @@ export class Filter {
       newPostArray.push(postData)
     })
 
-    return newPostArray
+    return this.getArrayByMaxPostsValue(newPostArray)
+  }
+
+  private readonly getArrayByMaxPostsValue = (postsArray: PostArray) => {
+    return postsArray.slice(0, this.filtersConfig.maxPosts)
   }
 
   private filterByCategory (postData: PostData, toSearch: string) {
