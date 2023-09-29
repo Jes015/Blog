@@ -1,6 +1,7 @@
 import { Filters, NotFound, PostCard } from '@/components'
-import { usePosts } from '@/hooks'
+import { useNearElement, usePosts } from '@/hooks'
 import { CFrontRoutes, type PostArray } from '@/models'
+import { useRef, type LegacyRef } from 'react'
 import styles from './lastPostsSection.module.css'
 
 interface IProps {
@@ -8,7 +9,9 @@ interface IProps {
 }
 
 export const LastPostsSection: React.FC<IProps> = ({ postsData }) => {
-  const { filteredPosts, setFilterByCategory, setSearchParamValue } = usePosts({ postsData })
+  const { filteredPosts, setFilterByCategory, setSearchParamValue, addNewPage } = usePosts({ postsData })
+  const infinityScrollRef = useRef<HTMLDivElement>()
+  useNearElement(infinityScrollRef, () => { addNewPage() })
 
   return (
         <section id="layout__post">
@@ -22,7 +25,7 @@ export const LastPostsSection: React.FC<IProps> = ({ postsData }) => {
                       ? filteredPosts.map((postData) => {
                         return (
                                 <PostCard
-                                    key={postData.slug}
+                                    key={postData.slug + new Date().getMilliseconds()}
                                     title={postData.data.title}
                                     description={postData.data.description}
                                     url={CFrontRoutes.post(postData.slug)}
@@ -34,6 +37,8 @@ export const LastPostsSection: React.FC<IProps> = ({ postsData }) => {
 
                       : <NotFound />
                 }
+                {/* for infinity scroll  */}
+                <div ref={infinityScrollRef as LegacyRef<HTMLDivElement>} />
             </main>
         </section>
   )
