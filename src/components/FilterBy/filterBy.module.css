@@ -16,3 +16,9 @@
     height: 100%;
     color: white;
 }
+
+.filterBy__option {
+    padding: 1em;
+    color: var(--text-color);
+    background-color: var(--body-background-color);
+}
