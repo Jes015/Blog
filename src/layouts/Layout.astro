@@ -16,19 +16,30 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Web dev tips, productivity, and valuable skills."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jes015's blog" />
+    <meta
+      name="twitter:description"
+      content="Web dev tips, productivity, and valuable skills."
+    />
+    <meta name="twitter:image" content="image" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
   </head>
   <body>
-    <div id="modal" />
+    <div id="modal"></div>
     <Header />
     <Driver />
     <main>
@@ -52,18 +63,16 @@ const { title } = Astro.props;
       .sectionLayout {
         width: 100%;
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
         gap: 0.8em;
       }
 
       .sectionLayout__second-container {
         display: flex;
         flex-direction: column;
-        gap: 1.5em
+        gap: 1.5em;
       }
 
-      
-      
       @media (width <= 1150px) {
         .wrap {
           max-width: 60vw;
