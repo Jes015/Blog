@@ -33,6 +33,7 @@ export const FilterBy: React.FC<Props> = ({ setFilterByCategory }) => {
                     <option
                         key={postCategory.name}
                         value={postCategory.name}
+                        className={styles.filterBy__option}
                     >
                         {postCategory.name}
                     </option>
