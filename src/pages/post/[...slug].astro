@@ -16,7 +16,7 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title}>
     <div class="wrap">
-        <h2 transition:name="post_title">{entry.data.title}</h2>
+        <h2 transition:name={entry.data.title}>{entry.data.title}</h2>
         <Content />
     </div>
 </Layout>

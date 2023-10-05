@@ -9,7 +9,7 @@ const lasPostSlug = lastPost?.slug
 
 <section class="lastPostSection">
     <div>
-        <h2 class="lastPostSection__title" transition:name="post_title">
+        <h2 class="lastPostSection__title" transition:name={lastPostData?.title}>
             {lastPostData?.title}
         </h2>
         <p class="lastPostSection__description">
