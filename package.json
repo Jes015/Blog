@@ -12,6 +12,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@astrojs/mdx": "^1.1.1",
     "@astrojs/react": "^3.0.2",
     "@fontsource/roboto": "^5.0.8",
     "@types/react": "^18.2.24",
