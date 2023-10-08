@@ -69,6 +69,9 @@ pre {
     font-family: monospace, monospace;
     /* 1 */
     font-size: 1em;
+    margin: 0;
+    padding: 0.5em;
+    background-color: var(--body-background-color) !important;
     /* 2 */
 }
 
