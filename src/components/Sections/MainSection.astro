@@ -1,10 +1,18 @@
 ---
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import { globalConfig } from '@/config'
 ---
 
 <section class="mainSection">
     <header class="mainSection__header">
         <Breadcrumbs />
+        <div class="mainSection__socials-container">
+            {
+                globalConfig.owner.socials.map((social) => (
+                    <a target="_blank" rel="noreferrer" href={social.url}>{social.name}</a>
+                ))
+            }
+        </div>
     </header>
     <main class="mainSection__main">
         <slot />
@@ -32,6 +40,12 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro'
         padding: 0.3em 0.5em;
         min-height: 2.639em;
         height: 100%;
+    }
+
+    .mainSection__socials-container {
+        display: flex;
+        gap: 0.4em;
+        font-size: 0.7em;
     }
 
     .mainSection__firstBreadcrumbs {
