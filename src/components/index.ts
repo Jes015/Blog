@@ -1,3 +1,4 @@
+export * from './Carousel/Carousel'
 export * from './FilterBy/FiltersBy'
 export * from './Filters/Filters'
 export * from './Icons'
