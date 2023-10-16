@@ -9,6 +9,11 @@
   padding: 1em;
   gap: 0.1em;
   border-top: 0.1em solid var(--border-color);
+
+  animation: post-in linear, post-out linear;
+  animation-duration: auto;
+  animation-timeline: view(block);
+  animation-range: entry, exit;
 }
 
 .post__header {
@@ -43,6 +48,23 @@
   text-wrap: balance;
 }
 
+@keyframes post-in {
+  from {
+    transform: translateY(2em);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes post-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2em);
+  }
+}
 @media (width < 1000px) {
   .post {
     gap: 0.4em;
