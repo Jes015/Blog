@@ -8,14 +8,5 @@ export default defineConfig({
   experimental: {
     optimizeHoistedScript: true
   },
-  integrations: [react(), mdx({
-    syntaxHighlight: 'shiki',
-    shikiConfig: { theme: 'dracula' },
-    remarkPlugins: [remarkToc],
-    rehypePlugins: [rehypeMinifyHtml],
-    remarkRehype: { footnoteLabel: 'Footnotes' },
-    gfm: false,
-    extendMarkdownConfig: false,
-    optimize: false
-  })]
+  integrations: [react(), mdx()]
 })
