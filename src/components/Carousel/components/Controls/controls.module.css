@@ -1,18 +1,16 @@
 .controls {
+    position: absolute;
     display: flex;
     width: 100%;
     height: 100%;
     flex-direction: column;
     align-items: stretch;
     z-index: 20;
-    padding: 0.2em;
 }
 
 .controlsSide {
+    position: relative;
     flex-grow: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .controlsSide__button {
@@ -20,21 +18,60 @@
     border: none;
 }
 
+.controlsSide__button-container {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-inline: 0.4em;
+}
+
+.controlsSide__button-container--left {
+    left: 0;
+}
+
+.controlsSide__button-container--right {
+    right: 0;
+}
+
+.controlsSide__button-icon {
+    width: 1.4em;
+    height: 1.4em;
+    filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.4811));
+}
+
 .controlsBottom {
+    position: relative;
     display: flex;
     gap: 0.2em;
     justify-content: center;
 }
 
+.controlsBottom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: -10;
+}
+
 .controlsBottom__button {
-    width: 1em;
-    height: 1em;
+    width: 0.9em;
+    height: 0.9em;
     background-color: var(--text-color);
     border-radius: 100%;
     opacity: .5;
     filter: drop-shadow(0px 0px 2px rgb(255, 255, 255));
+    margin-bottom: 0.5em;
 }
 
 .controlsBottom__button--selected {
     opacity: 1;
+}
+
+.controlsSide__button:hover {
+    color: inherit;
+    background-color: transparent;
 }

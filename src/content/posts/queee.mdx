@@ -8,8 +8,15 @@ relatedPosts: [hola]
 ---
 
 import Code from '@/components/Code.astro'
-import { Carousel, Elements, Element } from '@/components'
+import { ImageViewer } from '@/components'
 
 <Code code='const a = holaasdlkf' title="text.tsx"  />
 
+<ImageViewer
+    images={
+        ['https://avatars.githubusercontent.com/u/1561955?v=4', 'https://avatars.githubusercontent.com/u/120581623?v=4', 'https://avatars.githubusercontent.com/u/1561955?v=4', 'https://avatars.githubusercontent.com/u/120581623?v=4']
+    }
+
+    client:load
+/>
 Holaaaaaaaaa

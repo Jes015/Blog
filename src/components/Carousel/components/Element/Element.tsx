@@ -8,7 +8,6 @@ interface IProps {
 export const Element: React.FC<IProps> = ({ children }) => {
   const { actualElementIndex } = useCarouselContext()
 
-  console.log('no ', actualElementIndex)
   return (
         <div
             className={styles.element}
