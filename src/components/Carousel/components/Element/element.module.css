@@ -1,8 +1,10 @@
 .element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background-color: var(--body-background-color);
+    background-color: var(--primary-background-color);
     flex-basis: 100%;
     flex-shrink: 0;
-    transition: transform linear 0.3s;
 }

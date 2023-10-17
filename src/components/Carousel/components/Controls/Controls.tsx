@@ -1,3 +1,4 @@
+import { NextIcon, PreviousIcon } from '@/components'
 import { useCarouselContext } from '../../hooks/useCarouselContext'
 import styles from './controls.module.css'
 
@@ -14,7 +15,7 @@ export const Controls = () => {
 }
 
 const ControlsSide = () => {
-  const { nextElement, previousElement } = useCarouselContext()
+  const { nextElement, previousElement, actualElementIndex, length } = useCarouselContext()
 
   const handleOnClickRight = () => {
     nextElement()
@@ -26,12 +27,47 @@ const ControlsSide = () => {
 
   return (
     <div className={styles.controlsSide}>
-      <button onClick={handleOnClickLeft} className={styles.controlsSide__button}>
-        {'<'}
-      </button>
-      <button onClick={handleOnClickRight} className={styles.controlsSide__button}>
-        {'>'}
-      </button>
+      {
+        actualElementIndex !== 0 &&
+        <div
+          className={
+            [
+              styles['controlsSide__button-container'],
+              styles['controlsSide__button-container--left']
+            ].join(' ')
+          }
+        >
+          <button
+            onClick={handleOnClickLeft}
+            className={styles.controlsSide__button}
+          >
+            <PreviousIcon
+              className={styles['controlsSide__button-icon']}
+            />
+          </button>
+        </div>
+      }
+
+      {
+        actualElementIndex !== length - 1 &&
+        <div
+          className={
+            [
+              styles['controlsSide__button-container'],
+              styles['controlsSide__button-container--right']
+            ].join(' ')
+          }
+        >
+          <button
+            onClick={handleOnClickRight}
+            className={styles.controlsSide__button}
+          >
+            <NextIcon
+              className={styles['controlsSide__button-icon']}
+            />
+          </button>
+        </div>
+      }
     </div>
   )
 }

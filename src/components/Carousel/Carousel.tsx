@@ -5,13 +5,19 @@ import { CarouselProvider } from './context/'
 interface IProps {
   children: React.ReactNode
   carouselLength: number
+  inlineStyles: React.CSSProperties
 }
 
 // Compound components are not available in astro :( https://discord.com/channels/830184174198718474/1019713903481081876/threads/1048405809538814044
-export const Carousel = ({ children, carouselLength }: IProps) => {
+export const Carousel = ({ children, carouselLength, inlineStyles }: IProps) => {
   return (
     <CarouselProvider {...{ carouselLength }}>
       <div
+        style={
+          {
+            ...inlineStyles
+          }
+        }
         className={
           styles.carousel
         }
