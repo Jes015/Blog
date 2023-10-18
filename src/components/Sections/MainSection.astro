@@ -9,7 +9,7 @@ import { globalConfig } from '@/config'
         <div class="mainSection__socials-container">
             {
                 globalConfig.owner.socials.map((social) => (
-                    <a target="_blank" rel="noreferrer" href={social.url}>{social.name}</a>
+                    <a target="_blank" rel="noreferrer nofollow" href={social.url}>{social.name}</a>
                 ))
             }
         </div>

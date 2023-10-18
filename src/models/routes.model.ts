@@ -1,14 +1,18 @@
 export const CFrontRoutes = {
-    home: {
-        name: 'Home',
-        path: '/',
+    static: {
+        home: {
+            name: 'Home',
+            path: '/',
+        },
+        posts: {
+            name: 'Posts',
+            path: '/posts',
+        },
     },
-    posts: {
-        name: 'Posts',
-        path: '/posts',
-    },
-    post(postSlug: string) {
-        return `/post/${postSlug}`
+    dynamic: {
+        post(postSlug: string) {
+            return `/post/${postSlug}`
+        }
     }
 }
 
