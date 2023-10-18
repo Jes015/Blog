@@ -6,11 +6,11 @@ const breadcrumbs = getBreadcrumbs(Astro.url);
 
 <div class="breadcrumbs">
   {
-    Astro.url.pathname === CFrontRoutes.home.path
+    Astro.url.pathname === CFrontRoutes.static.home.path
     ?
     <span class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >{breadcrumbs.firstPartOfThePath}</span>
     :
-    <a href={CFrontRoutes.home.path} class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >{breadcrumbs.firstPartOfThePath}</a>
+    <a href={CFrontRoutes.static.home.path} class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >{breadcrumbs.firstPartOfThePath}</a>
   }
   <span class="breadcrumbs__last">{breadcrumbs.lastPartOfThePath}</span>
 </div>
