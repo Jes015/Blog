@@ -5,7 +5,7 @@ import { CFrontRoutes } from "@/models";
 <nav class="nav" id="header__nav-list">
   <ul id="nav__list" class="nav__list">
     {
-      Object.values(CFrontRoutes).map((route) => (
+      Object.values(CFrontRoutes.static).map((route) => (
         <li>
           <a class={"nav__ancord"} href={route.path}>
             <span>{route.name}</span>

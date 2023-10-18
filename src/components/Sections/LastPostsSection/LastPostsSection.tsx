@@ -28,7 +28,7 @@ export const LastPostsSection: React.FC<IProps> = ({ postsData }) => {
                                     key={postData.slug + new Date().getMilliseconds()}
                                     title={postData.data.title}
                                     description={postData.data.description}
-                                    url={CFrontRoutes.post(postData.slug)}
+                                    url={CFrontRoutes.dynamic.post(postData.slug)}
                                     techs={postData.data.types}
                                     publishDate={postData.data.publishDate}
                                 />

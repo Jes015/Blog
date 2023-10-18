@@ -8,7 +8,8 @@ const postsCollection = defineCollection({
     types: zValidator.array(zValidator.string()),
     publishDate: zValidator.number(),
     author: reference('authors'),
-    relatedPosts: zValidator.array(reference('posts'))
+    relatedPosts: zValidator.array(reference('posts')),
+    lastMod: zValidator.number().optional()
   })
 })
 
