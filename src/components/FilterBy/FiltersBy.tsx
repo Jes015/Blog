@@ -1,17 +1,41 @@
-import { CTechs, type TTech } from '@/models'
-import { useId, useRef } from 'react'
+import { CSearchParamsKeys, CTechs, type TTech } from '@/models'
+import { useEffect, useId, useRef } from 'react'
 import styles from './filterBy.module.css'
 
 interface Props {
   setFilterByCategory: (category: string) => void
 }
+
 export const FilterBy: React.FC<Props> = ({ setFilterByCategory }) => {
   const selectElementRef = useRef<HTMLSelectElement>()
   const id = useId()
 
+
+  useEffect(() => {
+    if (selectElementRef.current == null) return
+
+    const url = new URL(location.toString())
+    const filterValue = url.searchParams.get(CSearchParamsKeys.filter)
+
+    if (filterValue != null) {
+      selectElementRef.current.value = filterValue
+      setFilterByCategory(filterValue)
+    }
+  }, [])
+
   const handleOnInput = (event: React.FormEvent<HTMLSelectElement>): void => {
-    const newInput = event.currentTarget.value
-    setFilterByCategory(newInput)
+    const value = event.currentTarget.value
+    setFilterByCategory(value)
+
+    const newUrl = new URL(location.toString())
+
+    newUrl.searchParams.delete(CSearchParamsKeys.filter)
+    
+    if (value !== CTechs.all.name) {
+      newUrl.searchParams.append(CSearchParamsKeys.filter, value)
+    } 
+
+    history.pushState(null, '', newUrl)
   }
 
   return (
