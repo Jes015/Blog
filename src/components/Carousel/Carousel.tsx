@@ -1,3 +1,4 @@
+import { BlogComponent } from '@/layouts'
 import styles from './carousel.module.css'
 import { Controls, Element, Elements } from './components'
 import { CarouselProvider } from './context/'
@@ -11,23 +12,29 @@ interface IProps {
 // Compound components are not available in astro :( https://discord.com/channels/830184174198718474/1019713903481081876/threads/1048405809538814044
 export const Carousel = ({ children, carouselLength, inlineStyles }: IProps) => {
   return (
-    <CarouselProvider {...{ carouselLength }}>
-      <div
-        style={
-          {
-            ...inlineStyles
-          }
-        }
-        className={
-          styles.carousel
-        }
-        role="slider"
-      >
-        <Controls />
-        {children}
-      </div>
-    </CarouselProvider>
-
+    <BlogComponent>
+      <BlogComponent.Header>
+        <h3>Midu Images</h3>
+      </BlogComponent.Header>
+      <BlogComponent.Content>
+        <CarouselProvider {...{ carouselLength }}>
+          <div
+            style={
+              {
+                ...inlineStyles
+              }
+            }
+            className={
+              styles.carousel
+            }
+            role="slider"
+          >
+            <Controls />
+            {children}
+          </div>
+        </CarouselProvider>
+      </BlogComponent.Content>
+    </BlogComponent>
   )
 }
 
