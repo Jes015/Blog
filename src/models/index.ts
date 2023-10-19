@@ -5,5 +5,6 @@ export * from './icon.model'
 export * from './link.model'
 export * from './post.model'
 export * from './routes.model'
+export * from './searchParams.model'
 export * from './tech.model'
 
