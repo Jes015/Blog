@@ -13,24 +13,25 @@ interface IProps {
 
 export const PostCard: React.FC<IProps> = ({ title, url, description, techs, publishDate }) => {
   return (
-    <article
+    <a
+      href={url}
       className={styles.post}>
       <header className={styles.post__header}>
         <div className={styles['post__title-container']}>
-          <a
-            href={url}
+          <h3
+
             className={styles.post__anchor}
           >
             {title ?? 'Why github is the best way?'}
-          </a>
+          </h3>
         </div>
         <time className={styles.post__time} dateTime="2023-07-07">{getTimeAgo(publishDate)}</time>
       </header>
-      <main className={styles.post__main}>
-        <p>
+      <div className={styles.post__content}>
+        <p className={styles.post__description}>
           {description}
         </p>
-      </main>
+      </div>
       <footer>
         <div>
           {
@@ -40,6 +41,6 @@ export const PostCard: React.FC<IProps> = ({ title, url, description, techs, pub
           }
         </div>
       </footer>
-    </article>
+    </a>
   )
 }
