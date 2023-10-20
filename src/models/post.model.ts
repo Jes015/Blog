@@ -1,6 +1,7 @@
 import type { Author } from '@/models'
 
 export type PostArray = PostData[]
+export type RelatedPostArray = RelatedPost[]
 
 export interface PostData {
   data: Post
