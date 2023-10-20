@@ -1,4 +1,4 @@
-import { Carousel, Image } from '@/components'
+import { Carousel, Image } from '@/components/PostComponents'
 
 interface IProps {
   images: string[]

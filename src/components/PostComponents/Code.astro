@@ -1,5 +1,5 @@
 ---
-import { BlogComponent } from "@/layouts/BlogComponent/BlogComponent";
+import { PostComponent } from "@/layouts/PostComponent/PostComponent";
 import { Code as DefaultCode } from "astro:components";
 
 type Lang = "ts" | "js" | "tsx";
@@ -15,21 +15,21 @@ interface Props {
 const { code, lang = "ts", title, wrap = true, inline = false } = Astro.props;
 ---
 
-<BlogComponent>
+<PostComponent>
     {
         title != null && (
-            <BlogComponent.Header>
+            <PostComponent.Header>
                 <h3>{title}</h3>
-            </BlogComponent.Header>
+            </PostComponent.Header>
         )
     }
-    <BlogComponent.Content>
+    <PostComponent.Content>
         <button id="copy_button" class="code__copy-button" data-code={code}
             >Copy</button
         >
         <DefaultCode {...{ code, lang, inline, wrap }} theme="dark-plus" />
-    </BlogComponent.Content>
-</BlogComponent>
+    </PostComponent.Content>
+</PostComponent>
 
 <style>
     .code__copy-button {
