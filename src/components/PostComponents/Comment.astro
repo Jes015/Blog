@@ -1,0 +1,24 @@
+---
+import { PostComponent } from "@/layouts"
+---
+
+<PostComponent>
+    <PostComponent.Content>
+        <div class="comment__text">
+            <slot />
+        </div>
+    </PostComponent.Content>
+</PostComponent>
+
+<style>
+    .comment__title {
+        font-style: italic;
+    }
+
+    .comment__text {
+        font-style: italic;
+        font-weight: bold;
+        font-size: 0.8em;
+        padding: 0.5em;
+    }
+</style>

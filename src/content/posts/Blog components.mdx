@@ -1,0 +1,45 @@
+---
+title: Components for Posts
+description: Tlksjdfjklsafjsl
+types: [javascript]
+publishDate: 1695502521898
+lastMod: 1695502521898
+author: jes015
+relatedPosts: [hola]
+---
+
+import Code from '@/components/PostComponents/Code.astro'
+import Comment from '@/components/PostComponents/Comment.astro'
+import { Image,ImageViewer } from '@/components/PostComponents'
+
+<br />
+<Code code='const a = holaasdlkf' title="text.tsx"  />
+<br />
+<ImageViewer
+    images={
+        ['https://avatars.githubusercontent.com/u/1561955?v=4', 'https://avatars.githubusercontent.com/u/120581623?v=4', 'https://avatars.githubusercontent.com/u/1561955?v=4', 'https://avatars.githubusercontent.com/u/120581623?v=4']
+    }
+
+    client:load
+/>
+<br />
+<div style={{ display: 'flex' }}>
+<Image
+    alt='jes015 logo'
+    height='15em'
+    width='15em'
+/>
+<Image
+    src='https://avatars.githubusercontent.com/u/120581623?v=4'
+    alt='jes015 logo'
+    height='15em'
+    width='15em'
+    client:load
+/>
+</div>
+<br />
+<Comment title='olaaaa'>
+    Comment
+</Comment>
+
+Holaaaaaaaaa
