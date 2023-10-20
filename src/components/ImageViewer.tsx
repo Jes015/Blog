@@ -1,4 +1,4 @@
-import { Carousel } from '@/components'
+import { Carousel, Image } from '@/components'
 
 interface IProps {
   images: string[]
@@ -18,7 +18,7 @@ export const ImageViewer: React.FC<IProps> = ({ images }) => {
                 {
                     images.map((image, index) => (
                         <Carousel.Element key={index}>
-                            <img src={image} alt="carrousel image" />
+                            <Image src={image} alt="carrousel image" width='15em' height='15em' lazy={index !== 0} />
                         </Carousel.Element>
                     ))
                 }
