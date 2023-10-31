@@ -16,7 +16,7 @@
     "@astrojs/react": "^3.0.3",
     "@astrojs/sitemap": "^3.0.1",
     "@fontsource/roboto": "^5.0.8",
-    "@types/react": "^18.2.27",
+    "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "astro": "^3.3.0",
     "driver.js": "^1.2.1",
