@@ -1,0 +1,9 @@
+.title {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.title_hash-link {
+
+}
