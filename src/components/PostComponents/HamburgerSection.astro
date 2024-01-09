@@ -1,0 +1,46 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<details class="details">
+    <summary class="summary">{title}</summary>
+    <div class="details__content">
+        <slot />
+    </div>
+</details>
+
+<style>
+    .details {
+        display: flex;
+        flex-direction: column;
+        border: 0.1em solid var(--border-color);
+        border-radius: 0.1em;
+        filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.078));
+        transition-duration: 0.3s;
+        margin-block: 0.5em;
+    }
+
+    .summary {
+        padding: 0.2em;
+        font-weight: 100;
+        padding: 0.5em;
+        cursor: pointer;
+    }
+
+    .details[open] {
+        background-color: var(--primary-background-color);
+        position: relative;
+    }
+
+    .details[open] .summary {
+        border-bottom: 0.1em solid var(--border-color);
+    }
+
+    .details__content {
+        padding: 0.5rem;
+    }
+</style>

@@ -1,0 +1,14 @@
+.title__container {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-block: 0.3rem;
+}
+
+.title {
+
+}
+
+.title_hash-link {
+
+}
