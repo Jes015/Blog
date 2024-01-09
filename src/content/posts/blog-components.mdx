@@ -5,12 +5,13 @@ types: [javascript]
 publishDate: 1695502521898
 lastMod: 1695502521898
 author: jes015
-relatedPosts: [hola]
+relatedPosts: [optimize-images-with-javascript-canvas]
 ---
 
 import Code from '@/components/PostComponents/Code.astro'
 import Comment from '@/components/PostComponents/Comment.astro'
-import { Image,ImageViewer } from '@/components/PostComponents'
+import HamburgerSection from '@/components/PostComponents/HamburgerSection.astro'
+import { Image, ImageViewer, Title } from '@/components/PostComponents'
 
 <br />
 <Code code='const a = holaasdlkf' title="text.tsx"  />
@@ -41,3 +42,37 @@ import { Image,ImageViewer } from '@/components/PostComponents'
 <Comment title='olaaaa'>
     Comment
 </Comment>
+<br />
+<Title
+  as='h1'
+  titleId='ejemplo-practico-1'
+  client:load
+>
+  Title 1
+</Title>
+<Title
+  as='h2'
+  titleId='ejemplo-practico-2'
+  client:load
+>
+  Title 2
+</Title>
+<Title
+  as='h3'
+  titleId='ejemplo-practico'
+  client:load
+>
+  Title 3
+</Title>
+<br />
+<HamburgerSection
+    title='Step 1'
+>
+<Title
+  as='h3'
+  titleId='ejemplo-practico-3-hamburger'
+  client:load
+>
+  Title 3
+</Title>
+</HamburgerSection>

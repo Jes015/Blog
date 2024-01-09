@@ -18,11 +18,15 @@ export const Title: React.FC<TitleProps> = ({ as, children, titleId }) => {
   }
 
   return (
-    <ElementTitle className={styles.title} id={titleId ?? ''}>
-      {children}
+    <div
+      className={styles.title__container}
+    >
+      <ElementTitle className={styles.title} id={titleId ?? ''}>
+        {children}
+      </ElementTitle>
       <button onClick={handleOnClickForCopy}>
         <IconHashtag />
       </button>
-    </ElementTitle>
+    </div>
   )
 }

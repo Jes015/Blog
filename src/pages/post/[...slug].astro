@@ -18,7 +18,7 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title}>
   <div class="wrap">
-    <h2 transition:name={entry.data.title}>{entry.data.title}</h2>
+    <h2 class="title" transition:name={entry.data.title}>{entry.data.title}</h2>
     <Content />
     <RecommendedPosts relatedPosts={entry.data.relatedPosts} />
   </div>
@@ -28,5 +28,9 @@ const { Content } = await entry.render();
   .wrap {
     font-size: 0.9em;
     padding: 0.2em 1em;
+  }
+
+  .title {
+    margin-block: 0.5rem;
   }
 </style>

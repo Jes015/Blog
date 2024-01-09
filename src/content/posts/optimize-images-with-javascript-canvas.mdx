@@ -1,0 +1,160 @@
+---
+title: Optimize images with JavaScript CANVAS
+description: Tlksjdfjklsafjsl
+types: [javascript]
+publishDate: 1704723011659
+author: jes015
+relatedPosts: [blog-components]
+---
+import Code from '@/components/PostComponents/Code.astro'
+import Paragraph from '@/components/PostComponents/Paragraph.astro'
+import { Title } from '@/components/PostComponents/Title/Title.tsx'
+import HamburgerSection from '@/components/PostComponents/HamburgerSection.astro'
+
+<Paragraph>The optimization of images is highly important in modern web development. Loading very heavy images provides a poor user experience, and we want to avoid that. Therefore, if your team has not hired a back-end service for image optimization, you can suggest optimizing them on the front-end using the JS CANVAS API.</Paragraph>
+
+<Paragraph>With the CANVAS API, you can create graphics, scan the color of images, and actually, you can do many things. However, today I will teach you how to optimize images with it and not die in the process. As of now, almost 99% of browsers support it.<br /><a href="https://caniuse.com/canvas" target="_blank">Check out compatibility</a></Paragraph>
+
+<Title
+  as='h3'
+  titleId='ejemplo-practico'
+  client:load
+>
+  Let's get started
+</Title>
+
+<Paragraph> To use the JS canvas API, first, we need to create an instance of it and have access to its context. </Paragraph>
+
+  <Code
+    code="const canvas = document.createElement('canvas')
+        const context = canvas.getContext('2d')
+    "
+  title="example.ts"  />
+
+<Paragraph>
+Okay, now we need to access the properties of the image. And how can we do that if images typically come to us through objects of type File? We can use the global URL object for this.
+</Paragraph>
+<Code
+code="const files = event.currentTarget.files
+
+    const fileToTest = files?.[0]
+
+    if (fileToTest == null) return
+
+    const imageInstance = new Image()
+    imageInstance.src = URL.createObjectURL(fileToTest)
+"
+title="example.ts"
+/>
+<Paragraph>
+Now that we have the image and all its data, we only need to use the JS CANVAS API to optimize it. But you need to know one thing before proceeding; what we are going to do now is, in a way, draw the image we want to optimize on the canvas.
+</Paragraph>
+<Paragraph>
+First, the canvas object we have needs to know the width and height of the image.
+</Paragraph>
+<Code
+code="imageInstance.addEventListener('load', () => {
+  canvas.width = imageInstance.width
+      canvas.height = imageInstance.height
+      }
+"
+title="example.ts"
+/>
+<Paragraph>
+Now we need to use the canvas context to paste our image onto the canvas. Through the drawImage method, we paste our image on the canvas. It takes 4 parameters that you can delve into in the MDN documentation, but in summary, the first one is the image object as an argument, the second and third are the coordinates on the 'x' and 'y' axes of the image, and the fourth and fifth are the width and height of our image.
+</Paragraph>
+<Code
+code="imageInstance.addEventListener('load', () => {
+  ...
+  context?.drawImage(imageInstance, 0, 0, imageInstance.width, imageInstance.height)
+  ...
+  }
+"
+title="example.ts"
+/>
+<Paragraph>
+Now we have our image on the canvas; now we just need to transform it into the webp format. For that, we will use the toBlob method of the canvas object. The first parameter takes a callback that we will use to continue processing the image, the second receives the output format of the image, which in our case will be webp, and the third receives the amount of processing applied to the image (0.1 will give us a very blurry image, and 1 will give us an image with good quality).
+</Paragraph>
+<Code
+code="imageInstance.addEventListener('load', () => {
+  ...
+  canvas.toBlob((imageBlob) => {
+      //
+    }, 'image/webp', 0.9)
+    ...
+    }
+"
+title="example.ts"
+/>
+<Paragraph>
+Alright, now we will use the callback of the toBlob function to handle the image.
+</Paragraph>
+<Paragraph>
+Inside the callback, we will pass the blob returned by the toBlob method to an object of type File. From here, we can do whatever we want with the image. In my case, I will place it in an HTML element to see the results (You can experiment with the quality parameter of the toBlob method to observe the difference).
+</Paragraph>
+<Code
+code="
+imageInstance.addEventListener('load', () => {
+  ...
+canvas.toBlob((imageBlob) => {
+        if (imageBlob == null) return
+        const imageFile = new File([imageBlob], fileToTest.name, { type: 'image/webp' })
+        const imageURL = URL.createObjectURL(imageFile)
+        const newImageElement = document.createElement('img')
+        newImageElement.src = imageURL
+
+        newImageElement.addEventListener('load', () => {
+          document.body.appendChild(newImageElement)
+          URL.revokeObjectURL(imageURL)
+        })
+      }, 'image/webp', 0.9)
+    ...
+}
+"
+title="example.ts"
+/>
+
+<HamburgerSection
+  title='CLICK TO CHECK OUT THE CODE'
+>
+  <Code
+code="const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d')
+
+    const files = event.currentTarget.files
+
+    const fileToTest = files?.[0]
+
+    if (fileToTest == null) return
+
+    const imageInstance = new Image()
+    imageInstance.src = URL.createObjectURL(fileToTest)
+
+    imageInstance.addEventListener('load', () => {
+      canvas.width = imageInstance.width
+      canvas.height = imageInstance.height
+
+      context?.drawImage(imageInstance, 0, 0, imageInstance.width, imageInstance.height)
+      canvas.toBlob((imageBlob) => {
+        if (imageBlob == null) return
+        const imageFile = new File([imageBlob], fileToTest.name, { type: 'image/webp' })
+        console.log({ imageBlob })
+        const imageURL = URL.createObjectURL(imageFile)
+        const newImageElement = document.createElement('img')
+        newImageElement.src = imageURL
+
+
+        newImageElement.addEventListener('load', () => {
+          console.log(imageURL)
+          document.body.appendChild(newImageElement)
+          URL.revokeObjectURL(imageURL)
+        })
+      }, 'image/webp', 0.9)
+    })
+"
+title="example.ts"
+/>
+</HamburgerSection>
+<Paragraph>
+Thank you for reading; this is my first post. I know everything looks quite text-heavy, like a blog from 2001, but the design is experimental, and I'll continue working on it to provide a better user experience.
+</Paragraph>
