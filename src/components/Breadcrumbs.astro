@@ -1,23 +1,34 @@
 ---
 import { CFrontRoutes } from "@/models"
 import { getBreadcrumbs } from "@/utils"
+import { Image } from "./PostComponents"
 const breadcrumbs = getBreadcrumbs(Astro.url);
 ---
 
 <div class="breadcrumbs">
+  <Image
+    src="https://avatars.githubusercontent.com/u/120581623?v=4"
+    alt="Jes015's Avatar"
+    width='2rem'
+    height='2rem'
+    client:load
+    transition:persist
+  />
   {
     Astro.url.pathname === CFrontRoutes.static.home.path
     ?
-    <span class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >{breadcrumbs.firstPartOfThePath}</span>
+    <span class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >Jes015's Blog</span>
     :
-    <a href={CFrontRoutes.static.home.path} class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >{breadcrumbs.firstPartOfThePath}</a>
+    <a href={CFrontRoutes.static.home.path} class="breadcrumbs__first" transition:name="breadcrumb__firstPart" >Jes015's Blog</a>
   }
-  <span class="breadcrumbs__last">{breadcrumbs.lastPartOfThePath}</span>
 </div>
 
 <style>
   .breadcrumbs {
     font-size: 0.875em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
   }
   .breadcrumbs__first {
     font-weight: 900;
