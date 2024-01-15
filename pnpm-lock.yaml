@@ -28,7 +28,7 @@ dependencies:
     version: 18.2.15
   astro:
     specifier: ^3.3.0
-    version: 3.3.0(@types/node@20.10.7)(typescript@5.2.2)
+    version: 3.3.0(@types/node@20.11.1)(typescript@5.2.2)
   driver.js:
     specifier: ^1.3.1
     version: 1.3.1
@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^1.38.0
     version: 1.38.0
   '@types/node':
-    specifier: ^20.10.7
-    version: 20.10.7
+    specifier: ^20.11.1
+    version: 20.11.1
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.12.0
     version: 6.12.0(@typescript-eslint/parser@6.7.2)(eslint@8.56.0)(typescript@5.2.2)
@@ -158,7 +158,7 @@ packages:
       astro: ^3.3.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.3.0(@types/node@20.10.7)(typescript@5.2.2)
+      astro: 3.3.0(@types/node@20.11.1)(typescript@5.2.2)
       github-slugger: 2.0.0
       import-meta-resolve: 3.0.0
       mdast-util-definitions: 6.0.0
@@ -182,7 +182,7 @@ packages:
       astro: ^3.0.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.3.0(@types/node@20.10.7)(typescript@5.2.2)
+      astro: 3.3.0(@types/node@20.11.1)(typescript@5.2.2)
       github-slugger: 2.0.0
       import-meta-resolve: 3.0.0
       mdast-util-definitions: 6.0.0
@@ -209,7 +209,7 @@ packages:
       '@astrojs/markdown-remark': 3.4.0(astro@3.3.0)
       '@mdx-js/mdx': 2.3.0
       acorn: 8.10.0
-      astro: 3.3.0(@types/node@20.10.7)(typescript@5.2.2)
+      astro: 3.3.0(@types/node@20.11.1)(typescript@5.2.2)
       es-module-lexer: 1.3.0
       estree-util-visit: 1.2.1
       github-slugger: 2.0.0
@@ -1203,8 +1203,8 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: false
 
-  /@types/node@20.10.7:
-    resolution: {integrity: sha512-fRbIKb8C/Y2lXxB5eVMj4IU7xpdox0Lh8bUPEdtLysaylsml1hOOx1+STloRs/B9nf7C6kPRmmg/V7aQW7usNg==}
+  /@types/node@20.11.1:
+    resolution: {integrity: sha512-DsXojJUES2M+FE8CpptJTKpg+r54moV9ZEncPstni1WHFmTcCzeFLnMFfyhCVS8XNOy/OQG+8lVxRLRrVHmV5A==}
     dependencies:
       undici-types: 5.26.5
 
@@ -1233,7 +1233,7 @@ packages:
   /@types/sax@1.2.5:
     resolution: {integrity: sha512-9jWta97bBVC027/MShr3gLab8gPhKy4l6qpb+UJLF5pDm3501NvA7uvqVCW+REFtx00oTi6Cq9JzLwgq6evVgw==}
     dependencies:
-      '@types/node': 20.10.7
+      '@types/node': 20.11.1
     dev: false
 
   /@types/scheduler@0.16.3:
@@ -1438,7 +1438,7 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.10)
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.10)
       react-refresh: 0.14.0
-      vite: 4.5.1(@types/node@20.10.7)
+      vite: 4.5.1(@types/node@20.11.1)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1668,7 +1668,7 @@ packages:
     hasBin: true
     dev: false
 
-  /astro@3.3.0(@types/node@20.10.7)(typescript@5.2.2):
+  /astro@3.3.0(@types/node@20.11.1)(typescript@5.2.2):
     resolution: {integrity: sha512-O3MsXULamxQMy6sBgv07iVe5teJ41o+9tVScB/Yo2Io0XwvLXVhjVrjAxKpulBcKpU3/LyOpVfj/x63fcONbPA==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -1723,7 +1723,7 @@ packages:
       tsconfck: 3.0.0-next.9(typescript@5.2.2)
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.5.1(@types/node@20.10.7)
+      vite: 4.5.1(@types/node@20.11.1)
       vitefu: 0.2.4(vite@4.5.1)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -5633,7 +5633,7 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite@4.5.1(@types/node@20.10.7):
+  /vite@4.5.1(@types/node@20.11.1):
     resolution: {integrity: sha512-AXXFaAJ8yebyqzoNB9fu2pHoo/nWX+xZlaRwoeYUxEqBO+Zj4msE5G+BhGBll9lYEKv9Hfks52PAF2X7qDYXQA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -5661,7 +5661,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.10.7
+      '@types/node': 20.11.1
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.28.0
@@ -5677,7 +5677,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.1(@types/node@20.10.7)
+      vite: 4.5.1(@types/node@20.11.1)
     dev: false
 
   /volar-service-css@0.0.16(@volar/language-service@1.10.10):
