@@ -16,6 +16,9 @@
   animation-duration: auto;
   animation-timeline: view(block);
   animation-range: entry, exit;
+
+  transition-duration: 0.2s;
+  transition-property: background-color;
 }
 
 .post__header {
@@ -57,8 +60,8 @@
 }
 
 .post:hover {
-  background-color: var(--ternary-background-color);
-  filter: drop-shadow(0px 0px 100px rgba(255, 255, 255, 0.2811));
+  background-color: var(--quaternary-background-color);
+  transition-duration: 0.1s;
 }
 
 @keyframes post-in {
