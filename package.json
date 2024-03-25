@@ -11,7 +11,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.2",
+    "@astrojs/check": "^0.5.10",
     "@astrojs/mdx": "^1.1.4",
     "@astrojs/react": "^3.0.9",
     "@astrojs/sitemap": "^3.0.5",
